@@ -64,7 +64,6 @@
   <p class="m-3">2. Tee PHP-scripti, jossa alussa määritellään muuttuja $luku. <br> 
                   Anna muuttujalle arvoksi 6. Tulosta silmukan avulla muuttujan $luku kertotaulu 1-10.
   </p>
-
     <div class="row">
       <form action="./istunto-ja-evasteet.php" method="POST">
         <div class="col-2">
@@ -86,13 +85,13 @@
   </p>
     <div class="row">
       <form action="./istunto-ja-evasteet.php" method="POST">
-        <div class="col-3 px-4">
+        <div class="col-2 px-4">
           <?php if(!empty($_GET['error'])) $error = true; else $error = false; ?>
           <span class="error-red">
-            <?php if($error) echo 'Please check the field textform!' ?> 
+            <?php if($error) echo 'Tarkista kentän tiedot!' ?> 
           </span><br> 
         </div>
-        <div class="col-3">
+        <div class="col-2">
           <input type="text" class="form-control m-2" name="nimi" placeholder="Syötä nimi">
           <input type="number" class="form-control m-2" name="ika" placeholder="Syötä ikäsi">
         </div>
