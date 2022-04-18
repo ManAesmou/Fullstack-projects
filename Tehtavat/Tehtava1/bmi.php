@@ -12,18 +12,18 @@
 <h2>Tulos</h2>
 
 <?php
-  //Alustetaan muuttujat, tarkistetaan välit ja erikoismerkit.
-  $nimi = test_input($_GET['nimi']);
-  $pituus = test_input($_GET['pituus']);
-  $paino = test_input($_GET['paino']);
-  $virhe = false;
-
+  //Alustetaan muuttujat, tarkistetaan välit ja erikoismerkit. VIRHE TÄSSÄ JA ON JO PALAUTETTUNA (funktio-pyynnöt ennen funktiota)
   function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
   }
+
+  $nimi = test_input($_GET['nimi']);
+  $pituus = test_input($_GET['pituus']);
+  $paino = test_input($_GET['paino']);
+  $virhe = false;
 
   //Tarkistetaan tyhjätkentät ja merkit.
   if (empty($nimi) || empty($pituus) || empty($paino)) {
