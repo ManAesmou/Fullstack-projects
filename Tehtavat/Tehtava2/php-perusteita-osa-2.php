@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
-    .virhe {
+    .error-red {
       display: inline-block;
       color: #FF0000;
     }
@@ -33,11 +33,11 @@
                   Ensin on lomake, jonne syötetään tiedot (luku, luvut tai nimi ja ikä) ja <br> 
                   sitten annetuilla tiedoilla näytetään vastaukset.</p>
   <p class="m-2">1. Tee PHP-scripti, jossa määritellään muuttuja $a ja $b. <br>
-      Anna $a-muuttujan arvoksi 5 ja $b-muuttujan arvoksi 3. <br>
-      Laske ja tulosta PHP:lla vastaukset kaikille peruslaskutoimitusoperaatioille: + - / * %.
+                  Anna $a-muuttujan arvoksi 5 ja $b-muuttujan arvoksi 3. <br>
+                  Laske ja tulosta PHP:lla vastaukset kaikille peruslaskutoimitusoperaatioille: + - / * %.
   </p>
     <div class="row">
-      <form action="./istuntoJaEvasteet.php" method="GET">
+      <form action="./istunto-ja-evasteet.php" method="POST">
         <div class="col-2">
           <input type="number" class="form-control m-2 col-1" name="luku1" placeholder="Syötä Luku">
         </div>
@@ -53,7 +53,7 @@
         <div class="col-2">
           <input type="number" class="form-control m-2" name="luku2" placeholder="Syötä toinen luku">
         </div>
-        <button type="submit" class="btn btn-primary m-2" name="lahetaLasku">Laske</button>
+        <button type="submit" class="btn btn-primary m-2">Laske</button>
       </form>
     </div>
 </div>
@@ -62,78 +62,46 @@
 
 <div class="container-fluid">
   <p class="m-3">2. Tee PHP-scripti, jossa alussa määritellään muuttuja $luku. <br> 
-  Anna muuttujalle arvoksi 6. Tulosta silmukan avulla muuttujan $luku kertotaulu 1-10.
+                  Anna muuttujalle arvoksi 6. Tulosta silmukan avulla muuttujan $luku kertotaulu 1-10.
   </p>
 
     <div class="row">
-      <form action="./istuntoJaEvasteet.php" method="GET">
+      <form action="./istunto-ja-evasteet.php" method="POST">
         <div class="col-2">
           <input type="number" class="form-control m-2 col-1" name="lukuKertotaulu" placeholder="Syötä Luku">
         </div>
-        <button type="submit" class="btn btn-primary m-2" name="lahetaKertotaulu">Laske kertotaulu</button>
+        <button type="submit" class="btn btn-primary m-2">Laske kertotaulu</button>
       </form>
     </div>
 </div>
-<?php
-
-  $luku = 6;
-  
-  echo "Vastaus: <br>";
-  for($i = 1; $i < 11; $i++){
-    $tulo = $i * $luku;
-    echo "$i * $luku = $tulo <br>";
-  }
-?>
 
 <br><br>
 
-<?php 
-  echo '3. Tee PHP-scripti, jossa määritellään muuttujat: $nimi ja $ika. <br>
-  Anna arvoiksi "Pekka" ja 50. Tulosta $nimi ja $ika sekä ehtolauseen avulla: <br>
-  - Alaikäinen, jos $ika on alle 18 <br>
-  - Työikäinen, jos $ika on alle 65 <br>
-  - Eläkeläinen muuten<br><br>';
+<div class="container-fluid">
+  <p class="m-3">3. Tee PHP-scripti, jossa määritellään muuttujat: $nimi ja $ika. <br>
+                  Anna arvoiksi "Pekka" ja 50. Tulosta $nimi ja $ika sekä ehtolauseen avulla: <br>
+                  - Alaikäinen, jos $ika on alle 18 <br>
+                  - Työikäinen, jos $ika on alle 65 <br>
+                  - Eläkeläinen muuten.
+  </p>
+    <div class="row">
+      <form action="./istunto-ja-evasteet.php" method="POST">
+        <div class="col-3 px-4">
+          <?php if(!empty($_GET['error'])) $error = true; else $error = false; ?>
+          <span class="error-red">
+            <?php if($error) echo 'Please check the field textform!' ?> 
+          </span><br> 
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control m-2" name="nimi" placeholder="Syötä nimi">
+          <input type="number" class="form-control m-2" name="ika" placeholder="Syötä ikäsi">
+        </div>
+        <button type="submit" class="btn btn-primary m-2">Tarkista luokka</button>
+      </form>
+    </div>
+</div>    
 
-  $nimi = "Pekka";
-  $ika = 50;
-
-  echo "Vastaus: <br>";
-  if ($ika < 18) {
-    echo "$nimi on $ika-vuotias, eli hän on alaikäinen.";
-  } elseif ($ika < 65) {
-    echo "$nimi on $ika-vuotias, eli hän on työikäinen.";
-  } else {
-    echo "$nimi on $ika-vuotias, eli hän on eläkeläinen";
-  }
-?>
-
-<br><br>
-
-<p> 
-  4. Tee sovellus, jossa muuttujina määritetään  henkilön $nimi, $pituus ja $paino. <br>
-  Ohjelma laskee painoindeksin (kaava: $paino/($pituus*$pituus)*10000 ). <br>
-  Lisäksi sovellus kertoo indeksin perusteella onko ihminen <br>
-  normaalipainoinen (indeksi 20-25), lievästi ylipainoinen (indeksi 25-30) vai ylipainoinen. <br>
-</p>
-<p>Vastaus:</p>
-
-<?php 
-  if(!empty($_GET['virhe'])) $virhe = true; else $virhe = false; 
-  if(!empty($_GET['virhe'])) $pituus = $_GET['pituus']; else $pituus = ''; 
-  if(!empty($_GET['virhe'])) $paino = $_GET['paino']; else $paino = ''; 
-?>
-
-<form action="./istuntoJaEvasteet.php" method="GET">
-  <input type="text" placeholder="Nimi" name="nimi" maxlength="20">
-    <span class="virhe">
-      <?php if($virhe) echo '<p>Tarkista kentän tiedot!</p>' ?> 
-    </span><br>
-  <input type="number" placeholder="Pituus (cm)" name="pituus" value="<?php if($virhe) echo $pituus ?>"><br>
-  <input type="number" placeholder="Paino (kg)" name="paino" value="<?php if($virhe) echo $paino ?>"><br>
-  <input type="submit" value="Laske painoindeksi">
-</form>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
 </body>
 </html>
