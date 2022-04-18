@@ -1,0 +1,475 @@
+https://homes.jamk.fi/~huojo/opetus/IIZO3030/SQLopas.pdf
+^ 
+1. s. 2 JOHDANTO
+2. s. 18 PERUSKYSELYT
+3. s. 51 TAULUJEN MÄÄRITTELY JA MUUTTAMINEN
+
+
+
+VIDEOT. 2021-10-07 <-- luodaan tauluja ja rivejä. Liitokset 01.05.00--->
+
+
+
+
+
+Some of The Most Important SQL Commands:
+Jotkut tärkeimmistä SQL -komennoista:
+SELECT - poimii tietoja tietokannasta
+UPDATE - päivittää tietokannan tiedot
+DELETE - poistaa tiedot tietokannasta
+INSERT INTO - lisää uusia tietoja tietokantaan
+CREATE DATABASE - luo uuden tietokannan
+ALTER DATABASE - muuttaa tietokantaa
+CREATE TABLE - luo uuden taulukon
+ALTER TABLE - muokkaa taulukkoa
+DROP TABLE - poistaa taulukon
+CREATE INDEX - luo indeksin (search key)
+DROP INDEX - poistaa indexin
+
+SQL INSERT INTO -lauseke
+INSERT INTO -lausetta käytetään uusien tietueiden lisäämiseen taulukkoon.
+
+INSERT INTO Syntax
+INSERT INTO -lausekkeen voi kirjoittaa kahdella tavalla:
+
+1. Määritä sekä sarakkeiden nimet että lisättävät arvot:
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+2. Jos lisäät arvoja kaikille taulukon sarakkeille, sinun ei tarvitse 
+määrittää sarakkeiden nimiä SQL -kyselyssä. Varmista kuitenkin, että 
+arvojen järjestys on samassa järjestyksessä kuin taulukon sarakkeet. 
+Tässä INSERT INTO -syntaksi olisi seuraava:
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+
+
+Lisää tietoja vain määritettyihin sarakkeisiin
+On myös mahdollista lisätä tietoja vain tiettyihin sarakkeisiin.
+
+Seuraava SQL -lause lisää uuden tietueen, mutta lisää vain tiedot 
+"CustomerName", "City" ja "Country" -sarakkeisiin 
+(CustomerID päivitetään automaattisesti):
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+
+SQL UPDATE -lauseke
+UPDATE -käskyä käytetään taulukon nykyisten tietueiden muokkaamiseen.
+UPDATE Syntaksi:
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+Huomautus: Ole varovainen päivittäessäsi taulukon tietueita! 
+Huomaa UPDATE -lausekkeen WHERE -lauseke. 
+WHERE -lauseke määrittää, mitkä tietueet on päivitettävä. 
+Jos WHERE -lauseke jätetään pois, kaikki taulukon tietueet päivitetään!
+
+Päivitä useita tietueita
+WHERE -lauseke määrittää, kuinka monta tietuetta päivitetään.
+Seuraava SQL -lause päivittää ContactName -arvoksi "Juan" kaikille 
+tietueille, joissa maa on "Meksiko":
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
+
+
+SQL DELETE -lauseke
+DELETE -käskyä käytetään taulukon olemassa olevien tietueiden poistamiseen.
+DELETE Syntaksi:
+DELETE FROM table_name WHERE condition;
+
+SQL DELETE Esimerkki
+Seuraava SQL -lause poistaa asiakkaan "Alfreds Futterkiste" "Customers" -taulukosta:
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+
+Poista kaikki tietueet
+On mahdollista poistaa kaikki taulukon rivit poistamatta taulukkoa. 
+Tämä tarkoittaa, että taulukon rakenne, attribuutit ja indeksit ovat ennallaan:
+DELETE FROM table_name;
+
+Seuraava SQL -lause poistaa kaikki "Customers" -taulukon rivit poistamatta taulukkoa:
+DELETE FROM Customers;
+
+
+SQL SELECT -lauseke
+SELECT -käskyä käytetään tietojen valitsemiseen tietokannasta.
+Palautetut tiedot tallennetaan tulostaulukkoon, jota kutsutaan tulosjoukkoksi.
+* <- haetaan kaikki tiedot 
+SELECT * FROM Customers;
+SELECT CustomerName, City FROM Customers; <--- haetaan eriteltyä tietoa tietokannasta.
+
+SQL SELECT DISTINCT -lauseke
+SELECT DISTINCT -lauseketta käytetään vain erilaisten (eri) arvojen palauttamiseen.
+Taulukon sisällä sarake sisältää usein monia päällekkäisiä arvoja; ja 
+joskus haluat vain luetella eri (erilliset) arvot.
+SELECT DISTINCT Country FROM Customers;
+
+SQL WHERE -lauseke
+WHERE -lauseketta käytetään tietueiden suodattamiseen.
+Sitä käytetään vain sellaisten tietueiden poimimiseen, jotka täyttävät tietyn ehdon.
+Huomautus: WHERE -lauseketta ei käytetä vain SELECT -käskyissä, 
+vaan sitä käytetään myös UPDATE-, DELETE- jne. 
+
+esim. SELECT * FROM Customers WHERE Country='Finland'; <- hipsuja käytetään 
+tekstissä, pvm. WHERE <- käskyssä voidaan käyttää erittelyä (=, >, <, >=, yms)
+esim. SELECT * FROM Products WHERE Price > 30;
+
+WHERE -lausekkeen operaattorit.
+WHERE -lausekkeessa voidaan käyttää seuraavia operaattoreita:
+   
+    Käyttäjän 		kuvaus 	
+	
+	= 		yhtä suuri
+	> 		Suurempi kuin
+	<		pienempi kuin
+	>= 		Suurempi tai yhtä suuri
+	<= 		Pienempi tai yhtä suuri
+	<> 		Ei yhtä. Huomautus: Joissakin SQL -versioissa 
+			tämä operaattori voidaan kirjoittaa muodossa !=
+	BETWEEN	Tietyn alueen välillä
+	LIKE 		Etsi malli
+	IN 		Useiden mahdollisten arvojen määrittäminen sarakkeelle
+
+Fore example: SELECT * FROM cellar WHERE Bottles > 10
+
+SQL BETWEEN -operaattori
+BETWEEN -operaattori valitsee arvot tietyltä alueelta. Arvot voivat olla numeroita, tekstiä tai päivämääriä.
+
+BETWEEN -operaattori on kattava: aloitus- ja lopetusarvot sisältyvät.
+Esimerkkejä:
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+SELECT * FROM cellar WHERE Ready BETWEEN 77 AND 82
+
+SQL LIKE -operaattori
+LIKE -operaattoria käytetään WHERE -lausekkeessa etsimään sarakkeesta 
+määritettyä mallia.
+
+LIKE -operaattorin yhteydessä käytetään usein kahta yleismerkkiä:
+ Prosenttimerkki (%) edustaa nollaa, yhtä tai useita merkkejä
+ Alaviiva (_) edustaa yhtä yksittäistä merkkiä
+ Huomautus: MS Access käyttää tähtiä (*) prosenttiluvun (%) sijasta ja 
+ kysymysmerkkiä (?) Alaviivan (_) sijaan.
+%-merkkiä käytetään hakujutuissa (a% <- hakee kaikki arvot, jotka alkaa a:lla).
+SELECT * FROM cellar WHERE Wine LIKE 'C%'
+
+SQL LIKE Esimerkkejä
+Seuraava SQL -lause valitsee kaikki asiakkaat, joiden CustomerName alkaa "a":
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';
+
+ORDER BY -avainsanaa käytetään tulosjoukon lajitteluun nousevassa 
+tai laskevassa järjestyksessä.
+
+ORDER BY -avainsana lajittelee tietueet oletusarvoisesti nousevaan järjestykseen. 
+Voit lajitella tietueet laskevaan järjestykseen käyttämällä DESC -avainsanaa.
+
+ORDER BY Useiden sarakkeiden esimerkki
+Seuraava SQL -lause valitsee kaikki asiakkaat "Customers" -taulukosta, 
+lajiteltuina "Country" ja "CustomerName" -sarakkeen mukaan. 
+Tämä tarkoittaa sitä, että se järjestää Countryn mukaan, 
+mutta jos joillakin riveillä on sama maa, se järjestää ne CustomerName mukaan:
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+SELECT * FROM Customers
+ORDER BY Country DESC;  <- takaperin.
+
+
+SQL AND, OR ja NOT Operaattorit
+WHERE -lauseke voidaan yhdistää AND-, OR- ja NOT -operaattoreihin.
+
+AND- ja OR -operaattoreita käytetään tietueiden suodattamiseen useamman 
+kuin yhden ehdon perusteella:
+
+AND -operaattori näyttää tietueen, jos kaikki AND: llä erotetut ehdot ovat TRUE.
+OR -operaattori näyttää tietueen, jos jokin OR: lla erotetuista ehdoista on TRUE.
+NOT -operaattori näyttää tietueen, jos ehto NO TRUE.
+
+Voit myös yhdistää operaattorit AND, OR ja NOT.
+
+Seuraava SQL -lause valitsee kaikki kentät "Customers" -kohdasta, jossa maa on 
+"Germany" AND kaupungin on oltava "Berlin" OR "München" 
+(käytä sulkeita monimutkaisten lausekkeiden muodostamiseen):
+SQL ORDER BY Avainsana
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+
+
+SQL INSERT INTO -lauseke
+INSERT INTO -lausetta käytetään uusien tietueiden lisäämiseen taulukkoon.
+
+INSERT INTO Syntax
+INSERT INTO -lausekkeen voi kirjoittaa kahdella tavalla:
+
+1. Määritä sekä sarakkeiden nimet että lisättävät arvot:
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+2. Jos lisäät arvoja kaikille taulukon sarakkeille, sinun ei tarvitse määrittää 
+sarakkeiden nimiä SQL -kyselyssä. Varmista kuitenkin, että arvojen järjestys 
+on samassa järjestyksessä kuin taulukon sarakkeet. Tässä INSERT INTO -syntaksi 
+olisi seuraava:
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+
+Mikä on NULL -arvo?
+Kenttä, jolla on NULL -arvo, on kenttä, jolla ei ole arvoa.
+
+Jos taulukon kenttä on valinnainen, voit lisätä uuden tietueen tai päivittää 
+tietueen lisäämättä arvoa tähän kenttään. Sitten kenttä tallennetaan 
+NULL -arvolla.
+
+Huomautus: NULL -arvo eroaa nollasta tai välilyöntejä sisältävästä kentästä. 
+NULL -arvoinen kenttä on jätetty tyhjäksi tietueen luomisen aikana!
+
+Kuinka testata NULL -arvot?
+Ei ole mahdollista testata NULL -arvoja vertailuoperaattoreilla, 
+kuten =, < tai <>.
+
+Meidän on käytettävä IS NULL ja IS NOT NULL -operaattoreita.
+
+IS NULL -operaattori
+IS NULL -operaattoria käytetään tyhjien arvojen (NULL -arvot) testaamiseen.
+
+Seuraava SQL luettelee kaikki asiakkaat, joiden osoite -kentässä on NULL -arvo:
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+
+IS NULL Syntaksi:
+SELECT column_names
+FROM table_name
+WHERE column_name IS NULL;
+
+IS NOT NULL -operaattori
+IS NOT NULL -käyttäjää käytetään ei-tyhjien arvojen (EI NULL-arvojen) testaamiseen.
+
+Seuraava SQL luettelee kaikki asiakkaat, joiden arvo on Osoite -kentässä:
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NOT NULL;
+
+IS NOT NULL Syntaksi:
+SELECT column_names
+FROM table_name
+WHERE column_name IS NOT NULL;
+
+
+SQL SELECT TOP -lause
+SELECT TOP -lausekkeella määritetään palautettavien tietueiden määrä.
+
+SELECT TOP -lauseke on hyödyllinen suurissa taulukoissa, joissa on tuhansia 
+tietueita. Suuren määrän tietueiden palauttaminen voi vaikuttaa suorituskykyyn.
+
+Huomautus: Kaikki tietokantajärjestelmät eivät tue SELECT TOP -lauseketta. 
+MySQL tukee LIMIT -lauseketta valitakseen rajoitetun määrän tietueita, 
+kun taas Oracle käyttää FETCH FIRST n ROWS ONLY- ja ROWNUM -tiedostoja.
+
+MySQL Syntax:
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
+
+
+Toiminnot SQL MIN () ja MAX ()
+MIN () -toiminto palauttaa valitun sarakkeen pienimmän arvon.
+Funktio MAX () palauttaa valitun sarakkeen suurimman arvon.
+
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
+SELECT MAX(Price) AS LargestPrice
+FROM Products;
+
+Toiminnot SQL COUNT (), AVG () ja SUM ()
+COUNT () -funktio palauttaa määritettyä ehtoa vastaavien rivien määrän (laskee yhteen rivit).
+Funktio AVG () palauttaa numeerisen sarakkeen keskiarvon.
+SUMMA () -funktio palauttaa numeerisen sarakkeen kokonaissumman (laskee numerot yhteen). 
+
+SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+
+SQL -aliakset
+SQL -aliaksia käytetään antamaan taulukolle tai 
+taulukon sarakkeelle väliaikainen nimi.
+Aliaksia käytetään usein sarakkeiden nimien luettavuuden parantamiseen.
+Alias on olemassa vain kyselyn ajan.
+Alias luodaan AS -avainsanalla.
+
+Alias Column Syntax
+SELECT column_name AS alias_name
+FROM table_name;
+
+Alias Table Syntax
+SELECT column_name(s)
+FROM table_name AS alias_name;
+
+CONCANT() <- tällä yhdistetään tietueita eri sarakkeista.
+Käytä lainausmerkkejä sulkujen sisällä merkitsemään lisää tekstiä.
+SELECT CustomerName, CONCAT(Address, " ", PostalCode, " ", City) AS Address
+FROM Customers;
+
+SQL IN -operaattori
+IN -operaattorin avulla voit määrittää useita arvoja WHERE -lausekkeessa.
+
+IN -operaattori on lyhenne useille OR -olosuhteille.
+
+IN Esimerkkejä operaattorista
+Seuraava SQL -lause valitsee kaikki asiakkaat, jotka sijaitsevat 
+Saksassa, Ranskassa tai Yhdistyneessä kuningaskunnassa:
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+Seuraava SQL -lause valitsee kaikki asiakkaat, jotka EIVÄT ole 
+Saksassa, Ranskassa tai Yhdistyneessä kuningaskunnassa:
+SELECT * FROM Customers
+WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+Seuraava SQL -lause valitsee kaikki asiakkaat, 
+jotka ovat samasta maasta kuin toimittajat:
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
+
+SQL GROUP BY -lausunto
+GROUP BY -lauseke ryhmittelee rivit, joilla on samat arvot 
+yhteenvetoriveille, kuten "etsi asiakkaiden määrä kustakin maasta".
+
+GROUP BY -lauseketta käytetään usein koostefunktioiden (COUNT (), 
+MAX (), MIN (), SUM (), AVG ()) kanssa tulosjoukon ryhmittelyyn 
+yhden tai useamman sarakkeen kanssa.
+
+GROUP BY Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+
+SQL GROUP Esimerkkejä
+Seuraavassa SQL -käskyssä luetellaan asiakkaiden määrä kussakin maassa:
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+Seuraavassa SQL -lausekkeessa luetellaan asiakkaiden määrä kussakin maassa, 
+lajiteltu korkeasta matalaan:
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+
+SQL HAVING -lauseke
+HAVING -lauseke lisättiin SQL: ään, koska WHERE -avainsanaa ei voi 
+käyttää koostefunktioiden kanssa.
+
+HAVING Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+Seuraavassa SQL -käskyssä luetellaan asiakkaiden määrä kussakin maassa. 
+Sisällytä vain maat, joissa on yli 5 asiakasta:
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+
+
+SQL JOIN
+JOIN -lauseketta käytetään kahden tai useamman taulukon rivien yhdistämiseen niiden 
+välisen sarakkeen perusteella.
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+(INNER) JOIN: Palauttaa tietueet, joilla on vastaavat arvot molemmissa taulukoissa
+LEFT (OUTER) JOIN: Palauttaa kaikki tietueet vasemmasta taulukosta ja vastaavat 
+tietueet oikeasta taulukosta 
+RIGHT (OUTER) JOIN: Palauttaa kaikki tietueet oikeasta taulukosta ja vastaavat 
+tietueet vasemmasta taulukosta
+FULL (OUTER) JOIN: Palauttaa kaikki tietueet, jos vasemmassa tai oikeassa taulukossa 
+on osuma
+
+SQL INNER JOIN Avainsana
+INNER JOIN avainsana valitsee tietueet, joilla on vastaavat arvot molemmissa taulukoissa.
+
+INNER JOIN Syntaksi:
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+Huomautus: INNER JOIN -avainsana valitsee kaikki rivit molemmista taulukoista niin kauan 
+kuin sarakkeet vastaavat toisiaan. Jos "Orders" -taulukossa on tietueita, joilla ei ole 
+osumia "Customers" -osiossa, näitä tilauksia ei näytetä!
+
+Voi myös käyttää aliasta koodin merkkien vähentämiseen
+esim. SELECT O.OrdersID, C.CustomerName AS Asiakas <- tässä CustomerName muuttuu Asiakas-nimeksi.
+      FROM Orders O tai Orders AS O.
+INNER JOIN Customers AS C ON O.CustomerID = C.CustomerID <- Aliaksen avulla vähennetty merkkejä.
+
+KOLMEN TAULUN YHDISTÄMINEN
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
+
+
+
+25.10.2021
+Tietojen ottaminen talteen tekstitiedostoon:
+SELECT tyontekijanro, etunimi, sukunimi, '2021-01-23', 'Tauno eläkkeelle'
+INTO OUTFILE 'c:/temp/tauno.txt'
+FROM tyontekija
+WHERE tyontekijanro = 108
+
+
+taulun tietojen siirtäminen toiseen tauluun:
+INSERT INTO elake (tyontekijanro, etunimi, sukunimi, pvm)
+SELECT tyontekijanro, etunimi, sukunimi, '2021-10-25'
+FROM tyontekija
+WHERE tyontekijanro = 108
+
+
+Näin luodaan realiaikainen näkymä tietokannan sisällöstä, jos sinne tulee muutosta.
+CREATE VIEW nimet AS
+SELECT osasto.osastonimi, tyontekija.etunimi, tyontekija.sukunimi, tyontekija.rooli
+FROM osasto
+INNER JOIN tyontekija ON osasto.osastokoodi = tyontekija.osasto
+
+CREATE VIEW maksetut_palkat AS
+SELECT tyontekija.tyontekijanro, tyontekija.etunimi, tyontekija.sukunimi, palkat.palkka
+FROM tyontekija
+INNER JOIN palkat ON tyontekija.tyontekijanro = palkat.tyontekijanro
+
+Sitä voidaan tarkastella vähemmällä koodilla:
+SELECT etunimi,sukunimi,rooli,osastonimi
+FROM nimet
+ORDER BY osastonimi,sukunimi;
+
+SELECT tyontekijanro, etunimi, sukunimi, SUM(palkka) AS 'Vuosipalkka'
+FROM Maksetut_palkat
+WHERE YEAR(pvm) = '2019'
+GROUP BY tyontekijanro
+
+

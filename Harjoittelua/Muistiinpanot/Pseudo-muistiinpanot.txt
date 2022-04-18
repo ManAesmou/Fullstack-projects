@@ -1,0 +1,69 @@
+Hyvä sivusto oppimaan JavaScript! (Jäin sivulle: What went wrong? Troubleshooting JavaScript)
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
+
+Pseudokoodi juttuja:
+https://docplayer.fi/10276923-Johdanto-ja-esimerkki-pseudokoodi-lauseina-kommentointi-ja-sisentaminen-ohjausrakenteet.html
+
+
+"use strict";
+
+Ohjausrakenteet
+−Kaarisulkujen (( )) sisään sijoitetusta ehdosta, joka saa joko totuusarvon tosi (true, T) tai epätosi (false, F).
+−Yhdestä tai useammasta ohjausrakenteeseen liittyvästä, 			lauseesta, jotka suoritetaan vain, jos ehto on tosi.
+-Rakenteelle(arvo) varattu sana ja rakeenteen ehto kirjoitetaan samalle riville.
+-Rakenteeseen liittyvät lauseet alkavat seuraavalta riviltä.
+-Pseudokoodin rakennetta selkeytetään sisentämällä kootun lauseen sisältöä.
+-Koottua lausetta ei päätetä puolipisteellä (eli ei puolipistettä aaltosulun jälkeen).
+-ohjausrakenteet voiva olla sisäkkäisiä.
+-Myös toiseen rakenteeseen sisältyvän rakenteen koottu lause sisennetään.
+
+Valitarakenteet
+-Tässä tärkein työkalu on if-lause, jolla kuvataan, mitä täytyy tehdä, jos lauseen ehto on tosi.
+-If-lauseen laajennus, if-else-lause, kuvaa kuinka algoritmi toimii, kun ehto on tosi ja epätosi.
+-if-lause kuvaa yksi- ja else-lause kaksihaaraista päätöstä. Sisäkkäisillä valintarakenteilla voidaan kuvata näitä monimutkaisempia päätöksiä eli if lausee menee samaa polkua ja if-else voidaan rakentaa 2 eri polkua.
+-HUOM: else-osa liittyy aina lähimpään vapaaseen if-osaan (käytä sisennystä selkeyttämään).
+
+Toistorakenteet
+-Toistorakenteilla formalisoidaan toistuva suoritus. Toisto voidaan ilmaista yhtäpitävästi while-, do-while tai for -lauseilla, mutta yleensä jokin näistä on tietyissä tilanteessa luonnollisempi kuin toiset. 
+-Toistorakennetta kutsutaan lyhyesti silmukaksi.
+-Silmukan suoritusta ohjataan usein laskurimuuttujalla, jonka avulla pysytään selvillä siitä, monesko kierros on meneillään. Myös lippumuuttujia käytetään ohjaukseen.
+-Virheellinen logiikka voi johtaa silmukan loputtomaan toistoon (ikuinen silmukka)
+
+While-lause
+- Lauseita suoritetaan niin kauan kuin ehto on tosi.
+- Suoritus on esiehtoinen, koska ehto on lauseen alussa. Vois siis olla, että ehto on epätosi jo lauseeseen tultaessa. Tällöin while-lause ohitetaan.
+
+Do-While
+- Jälkiehtoinen toisto: Lauseet suoritetaan ainakin kerran, mikäli tätä ei estetä valintarakenteella.
+- Yhdistettyä lausetta ei voi poistaa, kun n = 1
+
+Toistorakenteet: do-while-lause
+ (Pseudokoodi esimerkki näkyy tästä).
+	Algoritmi Heippa2
+	  // Alustetaan laskuri.
+	  i← 0;
+	  // Luetaan toistojen lkm.
+	  lkm← lue();
+	  // Silmukoidaan, jos tarpeen.
+	  if(lkm> 0)
+	      do {
+	        tulosta("Heippa!");
+		i← i+ 1;
+	      }
+	      while(i< lkm
+
+For-Lause
+- Lauseiden toisto laskurimuuttujan avulla.
+- For-lause on kätevä, kun toistojen lukumäärä tiedetään.
+- Voidaan korvata helposti while-lauseella.
+Ensin: 	-Alustetaan laskuri ja tarkistetaan ehto.
+Sitten	-Jos ehto oli tosi, niin suoritetaan lauseet ja päivitetään laskuria, kunnes ehto on epätosi.
+
+Tärkeää:
+- Koodi jaetaan lauseiksi välimerkillä.
+- Sisentäminen ja kommentointi tärkeää.
+- Ohjausrakenteilla peräkkäisyyteen liitetään valintoja ja toistoa.
+- Valinta: if ja if-else
+- Toisto: while, do-while ja for.
+- Näillä tiedoilla voidaan tehdä pieniä ohjelmia - nyt pitäisi opetella, kuinka tämä tapahtuu käytännössä java-kielellä.
+
