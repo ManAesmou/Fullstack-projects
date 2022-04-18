@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Ismo Manninen">
+  <meta name="keywords" content="Ismo Manninen">
+  <meta name="Viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <title>Manninen Ismo</title>
+</head>
+
+<!------------- Header and navigation menu. --------------->
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a href="https://www.10thplanetjj.com/" class="navbar-brand"><img id="logo1" src="img/10th-planet-logo-gray.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="competition.html" class="nav-link">Competition</a>
+            </li>
+            <li class="nav-item">
+              <a href="travel.html" class="nav-link">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="nav-link">Register</a>
+            </li>
+          </ul>
+        </div>
+  </div>
+</nav>
+
+<!-------- Registration ------->
+
+<div class="register-body">
+  <div class="container-register">
+    <div class="title">Registration</div> <br>
+    <h5>* Marked are required </h5>
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <label for="text1" class="details">Full Name*</label>
+          <input id="text1" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+          <label for="text2" class="details">Username</label>
+          <input id="text2" placeholder="Enter your username">
+        </div>
+        <div class="input-box">
+          <label for="text3" class="details">Email*</label>
+          <input id="text3" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+          <label for="text4" class="details">Phone Number*</label>
+          <input id="text4" placeholder="Enter your phone number" required>
+        </div>
+        <div class="input-box">
+          <label for="text5" class="details">Password</label>
+          <input id="text5" placeholder="Enter your password">
+        </div>
+        <div class="input-box">
+          <label for="text6" class="details">Confirm Password</label>
+          <input id="text6" placeholder="Confirm your password">
+        </div>
+      </div>
+      <div class="gender-details">
+        <label for="other" class="gender-title">Gender*</label>
+          <div class="category">
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other" required>
+            <label for="other">Other</label>
+          </div>
+          <div class="category">
+            <label class="gender-title" for="belt">Belt color</label><br>
+              <select id="belt" name="belt">
+                <option value="white"selected>White</option>
+                <option value="blue">Blue</option>
+                <option value="purpple">Purpple</option>
+                <option value="brown">Brown</option>
+                <option value="black">Black</option>
+              </select><br>
+          </div>
+          <div class="category">
+            <label for="terms" class="registration">Terms of registration*</label><br>
+              <input type="checkbox" id="terms" name="terms" value="accept" required>
+              <label for="terms">Accept the terms of use and the automatic billing service.*</label><br>
+              <input type="checkbox" id="understood" name="understood" value="undestand" required>
+              <label for="understood">I accept the above information as correct and understood.*</label><br>
+              <input type="checkbox" id="marketing" name="marketing" value="marketing">
+              <label for="marketing">My information can be used for marketing and advertising.</label><br><br>
+          </div>
+      </div>
+      <div class="button">
+        <button type="submit" value="register">Accept the registration</button>
+      </div>
+    </form>  
+  </div>
+</div>
+
+<!--------- Footer --------->
+
+<footer>
+  <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+          <hr class="light">
+          <h5>Contact information</h5>
+          <hr class="light">
+          <p>eivalttamattalahe@gmail.com</p>
+          <p>Hallitsevakatu 1</p>
+          <p>12345 Tampere</p>
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Free practice hours</h5>
+        <hr class="light">
+        <p>Monday at 12 - 18</p>
+        <p>Wednesday at 12 - 18</p>
+        <p>Friday at 10 - 16</p>
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Secretary 's address</h5>
+        <hr class="light">
+        <p>+358 454512129</p>
+        <p>saattaalahtea@gmail.com</p>
+        <p>Paattavakatu 10</p>
+        <p>54321 Helsinki</p>
+      </div>
+      <div class="col-12">
+        <hr class="light">
+        <h5>Copyright &copy;2021 Designed By Ismo Manninen</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

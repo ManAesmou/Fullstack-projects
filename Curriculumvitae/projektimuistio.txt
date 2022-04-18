@@ -1,0 +1,88 @@
+px vs rem? rem is more difficult to work than static unit (px)
+use shorthand properties
+Älä tee kakkia elementtejä samaan luokkaan. käytä ennemmin divin luokkaa vaikuttamaan kaikkiin sisällä
+oleviin elementteihin. Esimerkiksi <div class="content"> css: .content a, h1, p jne.
+
+www.caniuse.com <- voit tarkistaa millä selaimella toimii toiminnot.
+
+about me sivusto
+
+kuvia matkustamisesta
+
+
+Laurin Linkki: https://www.satakunnankansa.fi/urheilu/art-2000007225066.html
+Elvira linkki: https://www.bjjheroes.com/bjj-fighters/elvira-karppinen
+Magnus linkki: http://www.10thplanet.se/
+Eddie  linkki: https://www.bjjheroes.com/bjj-fighters/eddie-bravo
+Richie linkki: https://www.bjjheroes.com/bjj-fighters/richie-martinez
+
+asenna filezilla-project.org
+yhteys koulun palvelimelle: 
+
+Tietojenkasittely.lapinamk.fi		<-- host
+FTP account name: ta42t21k		<--username
+Home directory: /httpdocs/TA42T21K
+Password: LapinamkT21K			<--password
+
+osoite palautetaan moodlen kansioon: https://Tietojenkasittely.lapinamk.fi/TA42T21K/ismomanninen/
+Uusikeskustelu¨--> aihe: Ismo Manninen - nettisivu -->Viesti:osoite tähän.
+
+2013 12 19 kotiutunut armeijasta
+2014 06 12 Lainan otettu ja kämppä ostettu
+
+2015 1. 1  Jujutsu ja lukkopaini aloitettu
+2015 7. 8  ensimmäisen kesän treenit Seinäjoella
+2015 11.29 Ensimmäiset SM-kisat (puvulla) ja turpaan
+2016 2. 6  Häviö Abdul WFC
+2016 2. 21 Ensimäinen SM-kilpailu voitto 
+2016 4. 3 Savollinnan kilapilut. kultaa nogi ja hopea gi.
+2016 4. 17 Finnish open -70kg puvulla kultaa
+2016 5. 8  Oulussa seminaarilla ja tapasin Laurin, Ellun ja Claran
+2016 5 31 Sain sinisen vyön Martin Aedma
+2016 5. 22 ADCC SM minä,orash,simo sija hopea
+2016 7. 4  Tampereelle treenaamaan viikoksi
+2016 8. 3  uudestaan Tampereelle treenaamaan
+2016 11.12 WFC kisat nogi ja kaksi nilkkalukkoa ja Laurin kulmaamassa
+2016 11.25 BJJ SM-kisat juuson kanssa ja häviö ekalla kierroksella.
+2017 1. 1 Ensimmäinen reissu Tukholmaan ja tapasin Magnus hanssonin.
+2017 1. 13 Tampereelle muutto.
+2017 2. 25 Sinivöisten suomenmestari 67.5kg nogi.
+2017 2. 26 Sinivöisten avoimen pronssia.
+2017 4. 26 Amsterdamin reissu ja tapasin Geon
+2017 5. 12 Savolinna kilpailut
+2017 7. 19 Ruotsin reissu ja korotus Purppuralle.
+2018 2. 25
+2018 11.3 AOF 5 Minä VS Tommi Heikkinen
+
+2016 7. 27 Jyväskylän naamalukko (nogi ja gi)
+2016 12 minä, juuso, Katja Kankaanpää
+
+
+2018 11.3 AOF5minä vs Tommi Heikkinen https://www.youtube.com/watch?v=E_ht1E1_8Mo&ab_channel=ArtofFight  
+Matsi tapahtuma alkaa58:30-->
+
+
+ The IMMAF World Championships 2016  <--- https://www.mmaviking.com/aof-4-abdul-hussein-vs-ismo-manninen/?fbclid=IwAR3tyM00RqpvmOK5ETHb-vGhW-BWUTfimOYrC1prEmoI3asAjIF14MiSfYc
+2018 5.5 AOF4 Minä vs Abdul Hussein	https://www.bjj-spot.com/bjj-grappling-competitions-rules-explained/
+matsi tapahtuma alkaa 55:40-->
+
+Säännöt: https://www.bjj-spot.com/bjj-grappling-competitions-rules-explained/
+
+/*
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap.
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+*/

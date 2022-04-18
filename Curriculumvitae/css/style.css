@@ -1,0 +1,957 @@
+/*-----------------------Affects all setting are here------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+body {
+	overflow-x: hidden;
+}
+
+
+
+
+/*------------------------Index page start here----------------------*/
+
+
+
+
+
+/*-------Here are the wallpaper settings.-------*/
+
+.header {
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("../img/eddiebravotampere.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}
+
+/*-------Here are the logo settings.-------*/
+
+#logo {
+	width: 200px;
+	height: auto;
+	border-radius: 45%;
+	background-color:black;
+	box-shadow: black 3px 3px 3px 3px;
+}
+
+/*-------Here are navigation bar settings.-------*/
+
+nav {
+	background:rgba(0, 0, 0, 0.7);
+	border: black solid 1px;
+	display: flex;
+	padding: 2% 6%;
+	justify-content: space-between;
+	align-items: center;
+}
+nav img {
+	width: 150px;
+}
+.nav-links {
+	flex: 1;
+	text-align: right;
+}
+.nav-links ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 8px 12px;
+	position: relative;
+}
+.nav-links ul li a {
+	color: #fff;
+	font-size: 20px;
+}
+.nav-links ul li::after {
+	content: '';
+	width: 0%;
+	height: 3px;
+	background:#1D1E4D;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+	width: 100%;
+}
+nav .fas {
+	display: none;
+}
+
+/*-------This is where the content texts begin.-------*/
+
+.text-box {
+	margin: auto;
+	padding: 144px 0;
+	color: #fff;
+	text-align: center;
+}
+.text-box h1 {
+	font-size: 55px;
+}
+.text-box p {
+	margin: 10px 0 40px;
+	font-size: 14px;
+	color: #fff;
+}
+
+/*-------Content button settings.-------*/
+
+.hero-btn {
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 12px 34px;
+	font-size: 13px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+}
+.hero-btn:hover {
+	border: 1px solid #1D1E4D;
+	background: #1D1E4D;
+	transition: 1s;
+}
+
+/*------- Where Am I from start here (main content). -------*/
+
+.wai {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+h1 {
+	font-size: 36px;
+	font-weight: 600;
+}
+p {
+	color: #777;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 22px;
+	padding: 10px;
+}
+.row {
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-between;
+}
+.wai-col {
+	flex-basis: 31%;
+	background: #fff3f3;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	padding: 20px 12px;
+	transition: 0.5s;
+}
+h3 {
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0px;
+}
+.wai-col:hover {
+	box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.5);
+}
+.wai-col a {
+	color: #d5b0b0;
+	transition: 0.5s;
+}
+.wai-col a:hover {
+	color: #1D1E4D;
+	text-decoration:underline ;
+}
+
+/*-------10th Planet Jiu-Jitsu Black Belts start here.-------*/
+
+#text-mod, #text-mod1, #text-mod2, #text-mod3 {
+	text-decoration: none ;
+	color: black;
+}
+
+.thpjjbb {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+.thpjjbb-col {
+	flex-basis: 32%;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+}
+.thpjjbb-col img {
+	border-radius: 10px;
+	max-width: 100%;
+	height: auto;
+}
+#text-mod:hover {
+  font-size: 30px;
+  font-style: oblique;
+  font-family: Arial, Helvetica, sans-serif ;
+  text-shadow:3px 3px 3px green;
+}
+#text-mod1:hover {
+	font-size: 35px;
+  font-family: "Brush Script MT", cursive;
+  text-shadow:3px 3px 3px red;
+}
+#text-mod2:hover {
+  font-family:Verdana, Geneva, fantasy;
+  font-size: 25;
+  text-shadow:3px 3px 3px blue;
+}
+#text-mod3:hover {
+  font-size: 25px;
+  font-style: oblique;
+  font-family: Arial, Helvetica, sans-serif ;
+  text-shadow:3px 3px 3px #fff;
+}
+.layer1 {
+	background: transparent;
+	width: 100%;
+	height: 99.3%;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.5s;
+
+}
+.layer1:hover {
+	background: #6B98F2;
+	opacity: 0.6;
+}
+.layer1 h2 {
+	width: 100%;
+	font-weight: 500;
+	color: black;
+	font-size: 26px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	opacity: 0;
+	transition: 1s;
+}
+.layer1:hover h2 {
+	bottom: 49%;
+	opacity: 1;
+}
+.layer2 {
+	background: transparent;
+	width: 100%;
+	height: 99.3%;
+	border-radius: 10px;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transition: 0.5s;
+	word-spacing: 19px;
+}
+.layer2:hover {
+	background: #57131c;
+	opacity: 0.7;
+}
+.layer2 h2 {
+	width: 100%;
+	font-weight: 500;
+	color: black;
+	font-size: 26px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	opacity: 0;
+	transition: 0.5s;
+}
+.layer2:hover h2 {
+	bottom: 49%;
+	opacity: 1;
+}
+.layer3 {
+	background: transparent;
+	width: 100%;
+	height: 99%;
+	border-radius: 10px;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transition: 0.5s;
+}
+.layer3:hover {
+	background: #7b6769;
+	opacity: 0.5;
+}
+.layer3 h2 {
+	width: 100%;
+	font-weight: 500;
+	color: black;
+	font-size: 26px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	opacity: 0;
+	transition: 2s;
+}
+.layer3:hover h2 {
+	bottom: 49%;
+	opacity: 1;
+}
+
+/*------- Where I started jiu-jitsu start here.-------*/
+
+.wiaf {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+.wiaf a {
+	color: #d5b0b0;
+	transition: 0.5s;
+}
+.wiaf a:hover {
+	color: #1D1E4D;
+	text-decoration:underline ;
+}
+.wiaf-col {
+	flex-basis: 31%;
+	border-radius: 10px;
+	margin-bottom: 5%;
+}
+.wiaf-col img {
+	width: 370px;
+	height: auto;
+	border-radius: 10px;
+}
+.wiaf-col h2 {
+	padding: 5px;
+	margin-top: 16px;
+	margin-bottom: 15px;
+}
+.wiaf-col p {
+	padding: 5px;
+}
+
+/*----------Footer start here.--------*/
+
+.footer {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #111;
+	height: auto;
+	width: 100%;
+	padding-top: 40px;
+	color: #fff;
+}
+.footer-con {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.footer-con h3 {
+	font-size: 29px;
+	font-weight: 400;
+	text-transform: capitalize;
+	line-height: 48px;
+}
+.footer-con p {
+	max-width: 500px;
+	margin: 10px auto;
+	line-height: 28px;
+	font-size: 14px;
+}
+.socials {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 16px 0 48px 0;
+}
+.socials li {
+	margin: 0 10px;
+}
+.socials a {
+	text-decoration: none;
+	color: #fff;
+}
+.socials a i {
+	font-size: 20px;
+	transition: color 0.3s ease;
+}
+.socials a:hover i {
+	color: #6163d0;
+}
+.footer-bottom {
+	background: #000;
+	width: 100%;
+	padding: 20px 0;
+	text-align: center;
+}
+.footer-bottom p {
+	font-size: 14px;
+	word-spacing: 2px;
+	text-transform: capitalize;
+}
+.footer-bottom span {
+	text-transform: uppercase;
+	opacity: 0.7;
+	font-weight: 200;
+}
+
+/*-------This is where the settings for the smaller screen start.-------*/
+
+@media (max-width: 1420px) {
+	.wiaf {
+		width: 50%;
+	}
+	.wiaf .row {
+		flex-direction: column;
+	}
+	.wiaf-col {
+		width: 100%;
+	}
+}
+
+@media(max-width: 768px) {
+	.wiaf {
+		width: 80%;
+	}
+	.text-box h1 {
+		font-size: 37px;
+	}
+  .wai h1, .thpjjbb h1, .wiaf h1 {
+		font-size: 25px;
+	}
+	.row {
+		flex-direction: column;
+	}
+	.nav-links {
+		position: absolute;
+		background: linear-gradient(135deg, #71b7e6, #3e184e);
+		height: 100%;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;
+		z-index: 2;
+		transition: 1s;
+	}
+	.nav-links ul {
+		padding: 20px;
+	}
+	.nav-links ul li {
+		display: block-inline;
+	}
+	nav .fas {
+		display: block;
+		color: #fff;
+		margin: 10px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+	.wiaf-col h2 {
+		padding: 5px;
+		margin-top: 10px;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	.wiaf-col p {
+		margin-bottom: 30px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------  Competition page start here   --------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------Here are the wallpaper settings.-------*/
+
+.headerattainments {
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("../img/suomenkilpailut/giant.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}
+
+/*-------- Competition container ------*/
+
+.headerheading {
+  text-align: center;
+  padding: 50px;
+}
+
+/*----- Photo Grid ------*/
+
+.rowversio2 {
+  display: flex;
+  flex-wrap: wrap;
+	padding: 0 25px;
+}
+.columncompetetion {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 5px;
+}
+.columncompetetion img {
+	width: 100%;
+  margin-top: 8px;
+  vertical-align: middle;
+	margin-bottom: 5px;
+}
+
+/*----- Podium container -----*/
+
+.wrappergrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 400px);
+	justify-content: center;
+	font: bold;
+	font-weight: 800;
+}
+
+.columnpodium {
+	overflow: hidden;
+	box-shadow: 0px 2px 8px 0px;
+	background: #fff;
+	text-align: center;
+	position: relative;
+	margin: 8px;
+	border-radius: 16px;
+	padding: 10px;
+}
+.columnpodium h2 {
+	padding: 5px;
+}
+.columnpodium img {
+	width: 100%;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+/*-- Video container  --*/
+
+.videocontainer {
+
+	display: table;
+  content:'';
+	width: 80%;
+	height: 50vh;
+	margin: auto;
+	padding: 10px;
+	box-shadow: 0px 2px 8px 0px ;
+	background: #fff;
+}
+.videocontainer p {
+	margin: auto;
+	padding: 10px;
+	float: left;
+	width: 39%;
+	text-align: left;
+	box-shadow: 0px 2px 8px 0px ;
+	background: #fff;
+}
+#video1 {
+	width: 60%;
+	float: right;
+	overflow: auto;
+}
+
+/*-------Fight container----*/
+
+
+.fight1, .fight2 {
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	margin: auto;
+	width: 75%;
+	border-radius: 16px;
+	padding: 10px;
+}
+.fight1 img, .fight2 img {
+	width: 100%;
+	border-radius: 10px;
+	padding: 15px;
+}
+
+@media (max-width: 992px) {
+  .columncompetetion {
+    flex: 50%;
+    max-width: 50%;
+  }
+	#video1 {
+		display: table;
+		float: center;
+		width: 100%;
+	}
+	.videocontainer p {
+		width: 100%;
+		text-align: center;
+		justify-content: center;
+		margin: auto;
+		margin-bottom: 15px;
+	}
+}
+@media (max-width: 576px) {
+  .columncompetetion {
+    flex: 100%;
+    max-width: 100%;
+  }
+	.headerheading h1 {
+		font-size: 25px;
+	}
+}
+#hide {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------Traveling page start here------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------Here are the logo settings.-------*/
+
+#logo1 {
+	width: 350px;
+	height: auto;
+	border-radius: 2px;
+	background-color:rgba(25, 21, 21, 0.9);
+	box-shadow: rgba(24, 13, 13, 0.9) 3px 3px 20px 0px;
+}
+
+/*----------Navigation bar start here.--------*/
+
+.navbar-nav li {
+	padding: 6px;
+}
+
+/*----------Image Slider.--------*/
+
+.slides-img {
+	max-width: 100%;
+	display: grid;
+  justify-content: center;
+	background: linear-gradient(135deg, #71b7e6, #3e184e);
+}
+.carousel-inner img {
+	max-width: 100%;
+}
+.parag {
+	font-size: 20px;
+	color: white ;
+}
+.legends a {
+	color: black;
+}
+
+/*----------Socials--------*/
+
+.social a {
+	font-size: 50px;
+	padding: 32px;
+}
+
+/*----------Footer--------*/
+
+footer {
+	background: #000;
+	color: #fff;
+	padding-top: 32px;
+}
+hr.light {
+	border-top: 1px solid darkblue;
+	width: 100%;
+}
+footer a {
+	color: #d5d5d5;
+}
+hr.light-100 {
+	border-top: 1px solid #d5d5d5;
+	width: 100%;
+	margin-top: 128px;
+	margin-bottom: 16px;
+}
+.text-center {
+	text-align: center;
+	justify-content: center;
+}
+
+@media (max-width: 1900px) {
+	.legends img {
+		width: 450px;
+	}
+}
+@media (min-width: 1200px) {
+	.legends img {
+		width: 390px;
+	}
+}
+@media (max-width: 992px) {
+	.column-section h2 {
+		text-align: center;
+	}
+	.column-section-2 h2 {
+		margin-top: 10px;
+		text-align: center;
+	}
+	.legends img {
+		width: 370px;
+	}
+}
+@media (max-width: 768px) {
+	.column-section h2 {
+		text-align: center;
+	}
+	.column-section-2 h2 {
+		margin-top: 10px;
+		text-align: center;
+	}
+	.carousel-caption h3 {
+		font-size: 140%;
+		font-weight: 400;
+		text-shadow: 1px 1px 10px #000;
+		padding-bottom: 3px;	
+  }
+	.carousel-caption .btn{
+		font-size: 95%;
+		padding: 8px 14px;
+	}
+	.social a {
+		font-size: 40px;
+		padding: 19px;
+	}
+	.btn {
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 576px) {
+	.welcome p, .legends p, .column-section p, .column-section-2 p {
+		font-size: 10px;
+		color:black ;
+  }
+	.column-section h2 {
+		text-align: center;
+	}
+	.column-section-2 h2 {
+		margin-top: 10px;
+		text-align: center;
+	}
+	.carousel-caption {
+		align-items: center;
+	}
+	body h1 {
+		font-size: 18px; 
+	}
+	.parag {
+		font-size: 14px;
+		color: white ;
+	}
+	body h2 {
+		font-size: 18px; 
+	}
+	.carousel-caption .btn{
+		font-size: 90%;
+		padding: 4px 8px;
+	}
+	.social a {
+		font-size: 32px;
+		padding: 11px;
+	}
+	footer h5 {
+		font-size: 16px;
+	}
+	footer p {
+		font-size: 12px;
+		color: #7b6769;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------ Register page start here ---------------------*/
+
+
+
+
+
+
+
+
+
+
+.register-body {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background: linear-gradient(135deg, #71b7e6, #3e184e);
+}
+.container-register {
+	max-width: 700px;
+	background: #fff;
+	padding: 25px 30px;
+	border-radius: 10px;
+}
+.container-register .title {
+	font-size: 25px;
+	font-weight: 500;
+	position: relative;
+}
+.container-register .title::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 133px;
+	background: linear-gradient(135deg, #71b7e6, #3e184e);
+}
+form .user-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0px 12px 0px;
+}
+form .user-details .input-box {
+	margin: 15px 0 12px 0;
+	width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.user-details .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease ;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input::after {
+	border-color: #9b59b6;
+}
+form .gender-details .gender-title {
+	font-size: 20px;
+	font-weight: 500;
+}
+form .gender-details .registration {
+	font-size: 18px;
+	font-weight: 500;
+}
+#belt {
+	margin-bottom: 20px;
+}
+.gender-details .category input {
+	justify-content: space-between;
+	margin-left: 10px;
+}
+form .button {
+	height: 45px;
+	margin: 20px 0;
+}
+form .button button {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	background: linear-gradient(135deg, #71b7e6, #3e184e);
+}
+form .button button:hover {
+	background: linear-gradient(135deg, #3e184e, #71b7e6);
+}
+
+@media (max-width: 576px) {
+	.container-register {
+		max-width: 100%;
+		padding: 5px;
+	}
+	form .user-details {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+	form .user-details .input-box {
+		margin-bottom: 15px;
+		width: 100%;
+	}
+	form .gender-details .category {
+		width: 100%;
+		font-size: 13px;
+	}
+	footer {
+		padding: 3px;
+	}
+}

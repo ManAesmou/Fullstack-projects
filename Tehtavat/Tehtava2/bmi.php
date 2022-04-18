@@ -12,6 +12,26 @@
 <h2>Tulos</h2>
 
 <?php
+
+$a = 5;
+$b = 3;
+
+$yhteen = $a + $b;
+$erotus = $a - $b;
+$kerto = $a * $b;
+$jako = $a / $b;
+$jakojaannos = $a % $b;
+
+echo "Vastaus: <br>";
+echo "Lukujen $a ja $b yhteenlaskun tulos on $yhteen. <br>";
+echo "Lukujen $a ja $b vähennyslaskun tulos on $erotus. <br>";
+echo "Lukujen $a ja $b kertolaskun tulos on $kerto. <br>";
+echo "Lukujen $a ja $b jakolaskun tulos on " .number_format($jako, 2, ","). ". <br>";
+echo "Lukujen $a ja $b jakojäännöslaskun tulos on $jakojaannos. <br>";
+
+
+
+
   //Alustetaan muuttujat, tarkistetaan välit ja erikoismerkit.
   $nimi = test_input($_GET['nimi']);
   $pituus = test_input($_GET['pituus']);

@@ -1,0 +1,94 @@
+/*
+Kertaus sivulta index.html:
+Bootstrapilla tyylitelty HTML-elementti sisältää sinisen rungon, jossa on musta ylä- ja alatunniste, 
+jotka on asetettu marginaaliin ja täytetään 2-5 väliltä. Lisäksi tekstit on keskitetty ja väri valkoinen. Säiliössä on yksi muotoiltu div-elementti.
+
+Tästä alkavat yksityiskohtaisemmat tyylitelmät tunnisteille ja luokille:
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+}
+
+#box-el {
+	margin: 8px auto;
+	width: 600px;
+}
+
+#table-el div{
+	display: flex;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	width: 105.2px;
+	height: 80px;
+	margin: 5px;
+	border-radius: 10px;
+	box-shadow: 0 3px 5px rgba(0,0,0,.5);
+  background: lightskyblue;
+	cursor: pointer;
+}
+
+#table-el div img {
+	display: none;
+	position: absolute;
+	width: 85px;
+	border-radius: 10px;
+}
+
+#box-btn-el {
+	display: block;
+	text-align: center;
+	margin: 20px;
+	padding: 6px;
+}
+
+.btn {
+	background-color: lightskyblue !important;
+	box-shadow: 0 3px 5px rgba(0,0,0,.5);
+}
+
+.btn:active, 
+#table-el div:active {
+  transform: scale(0.97) !important;
+  transition: transform .2s !important;
+}
+
+.btn:hover, 
+#table-el div:hover  {
+	background-color: lightblue !important;
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		margin-bottom: 10px !important;
+		padding: 20px !important;
+	}
+
+	#box {
+    margin: 0;
+  }
+	
+	#box-btn-el {
+		margin: 5px;
+		padding: 0px;
+	}
+
+	.btn {
+		margin: 5px;
+	}
+
+	#table-el {
+		margin-left: 12px;
+		margin-bottom: 13px;
+	}
+
+	.footer {
+		margin-top: 10px !important;
+		padding: 12px !important;
+	}
+}
