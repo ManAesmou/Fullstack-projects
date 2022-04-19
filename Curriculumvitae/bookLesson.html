@@ -63,8 +63,8 @@
           <input type="email" name="email" id="email" placeholder="Enter your email" required>
         </div>
         <div class="input-box">
-          <label for="phone" class="details">Phone*</label>
-          <input type="text" name="phone" id="phone" placeholder="Enter your phone number" required>
+          <label for="phone" class="details">Phone</label>
+          <input type="text" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone (0501234567)">
         </div>
         <div class="input-box">
           <label for="instructor" class="details">Instructor*</label>
@@ -84,8 +84,8 @@
           <div class="category">
             <label class="gender-title" for="lessontopic">Lesson topic*</label><br>
               <select class="form-select col-3" id="lessontopic" name="lessontopic">
-                <option value="1">Jiu-jitsu basics</option>
-                <option value="2">Wrestling basics</option>
+                <option value="jiu-jitsu basics">Jiu-jitsu basics</option>
+                <option value="wrestling basics">Wrestling basics</option>
               </select><br>
           </div>
           <div class="category">
@@ -100,10 +100,10 @@
               </select><br>
           </div>
           <div class="category">
-            <label for="terms" class="registration">Terms of registration*</label><br>
-              <input type="checkbox" id="understood" name="understood" value="undestand" required>
-              <label for="understood">I accept the above information as correct and understood.*</label><br>
-              <input type="checkbox" id="marketing" name="marketing" value="marketing">
+            <label for="terms" class="registration">Terms of registration   </label><br>
+              <input type="checkbox" id="acceptinformation" name="accept" value="1" required>
+              <label for="acceptinformation">I accept the above information as correct and understood.*</label><br>
+              <input type="checkbox" id="marketing" name="marketing" value="1">
               <label for="marketing">My information can be used for marketing and advertising.</label><br><br>
           </div>
       </div>
