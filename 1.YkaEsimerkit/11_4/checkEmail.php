@@ -1,5 +1,5 @@
 <?php
-/**
+/*
 Validate an email address.
 Provide email address (raw input)
 Returns true if the email address has the email 
