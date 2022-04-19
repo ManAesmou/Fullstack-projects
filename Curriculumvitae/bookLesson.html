@@ -34,7 +34,10 @@
               <a href="travel.html" class="nav-link">Travel</a>
             </li>
             <li class="nav-item">
-              <a href="register.html" class="nav-link">Register</a>
+              <a href="bookLesson.html" class="nav-link">Lesson</a>
+            </li>
+            <li class="nav-item">
+              <a href="./Backend/login.php" class="nav-link">Login</a>
             </li>
           </ul>
         </div>
@@ -45,33 +48,32 @@
 
 <div class="register-body">
   <div class="container-register">
-    <div class="title">Registration</div> <br>
+    <div class="title">Book a lesson</div> <br>
     <h5>* Marked are required </h5>
-    <form action="#">
+    <form action="bookLesson.php" method="POST">
       <div class="user-details">
         <div class="input-box">
-          <label for="text1" class="details">Full Name*</label>
-          <input id="text1" placeholder="Enter your name" required>
+          <label for="fullname" class="details">Full Name*</label>
+          <input type="text" name="fullname" id="fullname" placeholder="Enter your name" required>
         </div>
         <div class="input-box">
-          <label for="text2" class="details">Username</label>
-          <input id="text2" placeholder="Enter your username">
+          <label  typefor="email" class="details">Email*</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" required>
         </div>
         <div class="input-box">
-          <label for="text3" class="details">Email*</label>
-          <input id="text3" placeholder="Enter your email" required>
+          <label for="phone" class="details">Phone*</label>
+          <input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
         </div>
         <div class="input-box">
-          <label for="text4" class="details">Phone Number*</label>
-          <input id="text4" placeholder="Enter your phone number" required>
+          <label for="lessontopic" class="details">Lesson topic*</label>
+          <select id="lessontopic" class="input-box" name="lessontopic">
+            <option value="1">Jiu-jitsu basics</option>
+            <option value="2">wrestling basics</option>
+          </select>
         </div>
         <div class="input-box">
-          <label for="text5" class="details">Password</label>
-          <input id="text5" placeholder="Enter your password">
-        </div>
-        <div class="input-box">
-          <label for="text6" class="details">Confirm Password</label>
-          <input id="text6" placeholder="Confirm your password">
+          <label for="instructor" class="details">Instructor</label>
+          <input type="text" name="instructor" id="instructor" placeholder="Enter your instructor">
         </div>
       </div>
       <div class="gender-details">
@@ -96,8 +98,6 @@
           </div>
           <div class="category">
             <label for="terms" class="registration">Terms of registration*</label><br>
-              <input type="checkbox" id="terms" name="terms" value="accept" required>
-              <label for="terms">Accept the terms of use and the automatic billing service.*</label><br>
               <input type="checkbox" id="understood" name="understood" value="undestand" required>
               <label for="understood">I accept the above information as correct and understood.*</label><br>
               <input type="checkbox" id="marketing" name="marketing" value="marketing">
