@@ -3,7 +3,7 @@ require_once 'includes/header.php';
 ?>
 <div class="container mt-5">
   <div class="d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-lg bg-body rounded" style="width: 18rem;">
       <img src="/Curriculumvitae/Backend/Login.png" class="card-img-top" alt="...">
       <div class="card-body">
         <form action="/Curriculumvitae/Backend/includes/login-inc.php" method="POST">
