@@ -23,7 +23,7 @@
   /**
    * Tässä virheilmoitukset kirjautumiseen liittyen
    */
-  if(isset($_GET['virhe'])) $virhe=$_GET['virhe'];else $virhe='';
+  if(isset($_GET['virhe'])) $virhe = $_GET['virhe'];else $virhe='';
   if($virhe=='email') echo '<p class="alert alert-danger">Email oli väärä!</p>';
   if($virhe=='salasana') echo '<p class="alert alert-danger">Salasana väärin!</p>';
   ?>

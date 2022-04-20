@@ -27,7 +27,7 @@ require_once 'includes/header.php';
           </div>
           <div class="form-text">We'll never share your email with anyone else. Don't have an account? <a href="/Curriculumvitae/Backend/signup.php">Sing up</a> </div>
           </div>
-          <button type="submit" class="btn btn-primary w-100">Login</button>
+          <button type="submit" class="btn btn-primary w-100" name="submitLogin">Login</button>
         </form>
       </div>
     </div>

@@ -1,3 +1,8 @@
+<?php
+session_start(); 
+header('Cache-control: no-cache, no-store, must-revalidate');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -51,7 +56,7 @@
             <a class="nav-link" href="/Curriculumvitae/bookLesson.html">Lesson</a>
           </li>
           <li class="nav-item">
-            <?php if(isset($_SESSION['kayttajatunnusID'])) echo 'href="/Curriculumvitae/Backend/logout.php">Logout</a>';
+            <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/logout.php">Logout</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/Backend/login.php">Login</a>';
             ?>
           </li>
