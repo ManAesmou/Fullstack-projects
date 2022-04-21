@@ -34,14 +34,16 @@ require_once 'includes/header.php';
             </div>  
         </div>
         <div class="row">
-            <div class="col-md-3 my-1">
-            <select class="form-select" aria-label="Default select example" name="permissions">
+            <div class="col-md-3 my-2">
+            <label for="permissions" class="form-label">Access rights</label>
+            <select class="form-select" id="permissions" aria-label="Default select example" name="permissions">
                 <option value="user">Regular User</option>
                 <option value="admin">Administrator</option>
             </select>
             </div>
-            <div class="col-md-3 my-1">
-                <input type="date" class="form-control" name="registerDate" id="registrationDate"/ required>
+            <div class="col-md-3 my-2">
+                <label for="registrationDate" class="form-label">Date of registration</label>
+                <input type="date" class="form-control" name="registerDate" id="registrationDate" required>
             </div>
         </div>
         <button type="submit" class="btn btn-primary m-2 w-25" name="submitRegister">Register</button>

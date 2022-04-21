@@ -31,7 +31,8 @@ echo ((int)3.14)."<br>";
 echo ((float)3)."<br>";
 echo ((int)"80" + (float)"60.5")."<br>";
 echo  intval("80") + floatval("60.5");
-Strings
+
+//Strings
 $greeting = "Hello";
 //indexes:   01234
 
@@ -228,7 +229,7 @@ $book1 = new Book("Harry Potter", "JK Rowling");
 // $book1->title = "Half-Blood Prince";
 
 echo $book1->title."<br>";
-Getters and Setters
+//Getters and Setters
 class Book{
      private $title;
      public $author;

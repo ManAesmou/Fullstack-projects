@@ -31,6 +31,7 @@ if (empty($_POST)) {
                         exit();
                     } elseif ($passCheck == true) {
                         $_SESSION['userID'] = $row['kayttajatunnusID'];
+                        $_SESSION['name'] = $row['etunimi'];
                         $_SESSION['priviledge'] = $row['kayttooikeudet'];
                         header("Location: ../index.php?success=logged_in");
                     } else {
