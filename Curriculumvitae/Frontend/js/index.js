@@ -15,16 +15,16 @@ Pelissä etsitään pareja, ja kaikki parit löydettyä peli loppuu =>
 //Pelin ja selaimen päivitys-elementti ja kuvat pelille.
 const lataaUudelleenEl = document.getElementById("reload-el");
 const pelilautaKuvat = [
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-1.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-2.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-3.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-4.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-5.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-6.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-7.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-8.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-9.jpg",
-  "/2022/FrontEnd/Projektit/lopputehtava/img/kuva-10.jpg"
+  "/Curriculumvitae/Frontend/img/kuva-1.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-2.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-3.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-4.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-5.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-6.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-7.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-8.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-9.jpg",
+  "/Curriculumvitae/Frontend/img/kuva-10.jpg"
 ];
 
 //Paikalliset muuttujat.

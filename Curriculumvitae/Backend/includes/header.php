@@ -35,35 +35,61 @@ header('Cache-control: no-cache, no-store, must-revalidate');
   </svg>
     
 <header>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark" className="justify-content-end">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php"><img src="./logo.png"></a>
+    <?php if(isset($_SESSION['userID'])) {
+      echo '<div class="dropdown p-4">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-user-large"></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/personalInfo.php">Manage profile settings</a></li>';
+          if(isset($_SESSION['userID']) && $_SESSION['userID'] =='1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/registerUser.php">Register user</a></li>';
+        else echo ''; echo '
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/change-password.php">Change password</a></li>
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/logout.php">Log out</a></li>
+      </ul>
+    </div>';
+    } else {
+      echo '<a class="navbar-brand" href="/Curriculumvitae/Backend/login.php"><img src="./logo.png"></a>';
+    }
+      ?>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/Curriculumvitae/index.html">Home</a>
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/home-page.php">Home page</a>';
+              else echo '<a class="nav-link" href="/Curriculumvitae/index.html">Home</a>';
+            ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Curriculumvitae/competition.html">competition</a>
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.html">Memory game</a>';
+              else echo '<a class="nav-link" href="/Curriculumvitae/competition.html">Competition</a>';
+            ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Curriculumvitae/travel.html">Travel</a>
+          <?php if(isset($_SESSION['userID'])) echo '';
+              else echo '<a class="nav-link" href="/Curriculumvitae/travel.html">Travel</a>';
+            ?>
+          </li>
+          <?php 
+            ?>
+          <li class="nav-item">
+          <?php if(isset($_SESSION['userID'])) echo '';
+              else echo '<a class="nav-link" href="/Curriculumvitae/bookLesson.html">Lesson</a>';
+            ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Curriculumvitae/bookLesson.html">Lesson</a>
-          </li>
-          <li class="nav-item">
-            <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/logout.php">Logout</a>';
+            <?php if(isset($_SESSION['userID'])) echo '';
               else echo '<a class="nav-link" href="/Curriculumvitae/Backend/login.php">Login</a>';
             ?>
           </li>
         </ul>
       </div>
     </div>
-  </nav>  
+  </nav>
 </header>
 
 <body>
