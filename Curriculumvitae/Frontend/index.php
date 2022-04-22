@@ -28,7 +28,7 @@
     <header>
       <div class="header mb-2 p-4 bg-dark text-white text-center">
         <h1>Muistipeli</h1>
-        <a class="text-white text-decoration-none" href="/Curriculumvitae/Backend/home-page.php">Takaisin</a>
+        <a class="text-white text-decoration-none" href="/Curriculumvitae/Backend/index.php?page=home">Takaisin</a>
       </div>
     </header>
     

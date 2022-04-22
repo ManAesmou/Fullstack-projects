@@ -1,27 +1,23 @@
 <?php
-require_once 'includes/header.php';
-?>
-
-<?php
 /**
  *  file:   home-page.php
  *  desc:   Haetaan asiakkaita tietokannasta
  */
-if (isset($_SESSION['userID'])) {
-    require 'includes/database.php';
-    
-    $name = $_SESSION['name'];
-    
-    $sql = "SELECT * 
-    FROM yksityistunnit
-    INNER JOIN sukupuolet ON yksityistunnit.sukupuoliID = sukupuolet.sukupuoliID
-    WHERE ohjaaja = '$name'";
+require 'includes/database.php';
 
-    $result = $conn->query($sql);
-    $rowCount = mysqli_num_rows($result);
+$sql = "SELECT * 
+FROM yksityistunnit
+INNER JOIN sukupuolet ON yksityistunnit.sukupuoliID = sukupuolet.sukupuoliID
+WHERE ohjaaja = '$sessionFirstname'";
+
+$result = $conn->query($sql);
+$rowCount = mysqli_num_rows($result);
+
 ?>
 
 <h3 class="m-3">There are <?php echo $rowCount; ?> private lessons for you.</h3>
+<div class="container">
+  <div class="row d-flex justify-content-center col-md-12">
 <table class="table table-striped">
     <thead>
       <tr>
@@ -34,7 +30,7 @@ if (isset($_SESSION['userID'])) {
       </tr>
     </thead>
     <tbody>
-      <?php
+<?php
       //tulostetaan $result-muuttujalta kaikki rivit while-silmukalle
       while ($row = $result->fetch_assoc()) {  // or foreach ($result as $row) 
           echo '<tr>';
@@ -47,11 +43,13 @@ if (isset($_SESSION['userID'])) {
           // echo '<td>'.number_format($row['price'], 0).'</td>';
           echo '</tr>';
       }
-    } 
     $conn->close(); //hävittää yhteyden tiedot palvelimen muistista
-    ?>
+?>
   </tbody>
 </table>
+</div>
+
+</div>
 
 <?php
 require_once 'includes/footer.php';

@@ -46,7 +46,7 @@ header('Cache-control: no-cache, no-store, must-revalidate');
         <li><a class="dropdown-item" href="/Curriculumvitae/Backend/personalInfo.php">Manage profile settings</a></li>';
           if(isset($_SESSION['userID']) && $_SESSION['userID'] =='1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/registerUser.php">Register user</a></li>';
         else echo ''; echo '
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/change-password.php">Change password</a></li>
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=changepassword">Change password</a></li>
         <li><a class="dropdown-item" href="/Curriculumvitae/Backend/logout.php">Log out</a></li>
       </ul>
     </div>';
@@ -60,12 +60,12 @@ header('Cache-control: no-cache, no-store, must-revalidate');
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/home-page.php">Home page</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=home">Home page</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/index.html">Home</a>';
             ?>
           </li>
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.html">Memory game</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.php">Memory game</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/competition.html">Competition</a>';
             ?>
           </li>

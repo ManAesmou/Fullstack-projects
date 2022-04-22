@@ -31,7 +31,8 @@ if (empty($_POST)) {
                         exit();
                     } elseif ($passCheck == true) {
                         $_SESSION['userID'] = $row['kayttajatunnusID'];
-                        $_SESSION['name'] = $row['etunimi'];
+                        $_SESSION['firstname'] = $row['etunimi'];
+                        $_SESSION['lastname'] = $row['sukunimi'];
                         $_SESSION['priviledge'] = $row['kayttooikeudet'];
                         header("Location: ../index.php?success=logged_in");
                     } else {
@@ -39,7 +40,7 @@ if (empty($_POST)) {
                         exit();
                     }
                 } else {
-                    header("Location: ../index.php?error=nouser");
+                    header("Location: ../index.php?error=wrongemail");
                     exit();
                 }
             }           
