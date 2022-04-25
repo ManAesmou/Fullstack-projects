@@ -2,7 +2,7 @@
 /* 
   file:          kaikkiPresidentit.php
   description:   Listaa kaikki presidentit etunimen, sukunimen ja syntymäajan perusteella ja tulostaa ne taulukkoon. 
-                    Tämä sisältö on osa index.php -sivua, joten tässä on vain tarvittava html-osuus 
+                  Tämä sisältö on osa index.php -sivua, joten tässä on vain tarvittava html-osuus 
 */
 require 'includes/dbManagement.php'
 ?>

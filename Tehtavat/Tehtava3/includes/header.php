@@ -1,7 +1,4 @@
-<?php
-  !empty($_GET['page']) ? $page = $_GET['page'] : $page='';
-?>
-
+<!-- Sivustojen ylätunniste ja navigaatio muille sivustoille -->
 <!doctype html>
 <html lang="en">
   <head>

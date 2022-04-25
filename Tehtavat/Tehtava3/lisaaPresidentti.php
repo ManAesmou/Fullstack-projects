@@ -26,7 +26,7 @@ require 'includes/dbManagement.php'
             </div>  
         </div>
         <div class="row">
-            <div class="form-floating col-md-3 my-1 gx-1">
+            <div class="form-floating col-lg-3 my-1 gx-1">
                 <input type="text" class="form-control" name="kaupunki" id="floatingCity" placeholder="Kaupunki*" required>
                 <label for="floatingCity">Kaupunki*</label>
             </div>
@@ -45,5 +45,6 @@ require 'includes/dbManagement.php'
                 <input type="date" class="form-control" name="kuolemapvm" id="inputKuolemapvm">
             </div>
         </div>
-        <button type="submit" class="btn btn-success m-2 w-25" name="laheta">Tallenna</button>
+        <button type="submit" class="btn btn-success m-2" name="laheta">Tallenna</button>
+        <a href="./index.php?page=all_presidents" class="btn btn-info">Takaisin</a>
 </div>
