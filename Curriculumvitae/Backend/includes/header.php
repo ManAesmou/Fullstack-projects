@@ -1,6 +1,5 @@
 <?php
-session_start(); 
-header('Cache-control: no-cache, no-store, must-revalidate');
+require 'dbManagement.php';
 ?>
 
 <!doctype html>
@@ -44,10 +43,10 @@ header('Cache-control: no-cache, no-store, must-revalidate');
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item" href="/Curriculumvitae/Backend/personalInfo.php">Manage profile settings</a></li>';
-          if(isset($_SESSION['userID']) && $_SESSION['userID'] =='1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/registerUser.php">Register user</a></li>';
+          if(isset($_SESSION['userID']) && $_SESSION['userID'] == '1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=register">Register user</a></li>';
         else echo ''; echo '
         <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=changepassword">Change password</a></li>
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/logout.php">Log out</a></li>
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/includes/dbManagement.php?submit=logout">Log out</a></li>
       </ul>
     </div>';
     } else {
@@ -83,7 +82,7 @@ header('Cache-control: no-cache, no-store, must-revalidate');
           </li>
           <li class="nav-item">
             <?php if(isset($_SESSION['userID'])) echo '';
-              else echo '<a class="nav-link" href="/Curriculumvitae/Backend/login.php">Login</a>';
+              else echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=login">Login</a>';
             ?>
           </li>
         </ul>

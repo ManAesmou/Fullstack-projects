@@ -69,9 +69,9 @@ else {
         <div class="alert alert-success col-11" role="alert">
           <h4 class="alert-heading">Tervetuloa!</h4>
             <p>Tältä sivustolta löydät Yhdysvaltojen presidentit 1700 luvun alkupuolelta alkaen.<br> 
-            Voit lisätä, muokata ja poistaa presidenttejä haluamallasi tavalla. </p>
+            Voit lisätä, muokata ja poistaa presidenttejä. </p>
           <hr>
-            <p class="mb-2">Sivusto on luotu palvelemaan tehtävän 3 tavoitteita: <br></p><p class="mx-3">
+            <p class="mb-2">Sivusto on luotu täyttämään tehtävän 3 tavoitteita: <br></p><p class="mx-3">
             "Käytä oheista presidentit-tietokantaskriptiä ja luo tietokanta sekä määritä käyttöoikeudet webbisovellusta varten. <br>
             1. Tee listaus USA presidenteistä aakkosjärjestyksessä (Etunimi, sukunimi ja syntymäaika). <br>
             2. Tee hakutoiminto (vrt Autosovellus), jolla voi hakea presidenttejä nimen tms perusteella. <br>

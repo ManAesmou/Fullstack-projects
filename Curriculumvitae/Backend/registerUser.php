@@ -1,10 +1,7 @@
-<?php
-require_once 'includes/header.php';
-?>
 
 <div class="container mt-5 shadow-lg p-3 mb-5 bg-body rounded">
     <h1 class="my-3">Register an account</h1>
-    <form action="includes/registerUser-inc.php" method="post">
+    <form action="includes/dbManagement.php" method="post">
         <div class="row">
             <div class="form-floating col-md-4 my-1 gx-1">
                 <input type="email" class="form-control" name="email" id="floatingEmail" placeholder="name@example.com" required>
@@ -49,34 +46,3 @@ require_once 'includes/header.php';
         <button type="submit" class="btn btn-primary m-2 w-25" name="submitRegister">Register</button>
     </form>
 </div>
-<?php 
-    if(isset($_GET['error'])) {
-        $error = $_GET['error'];
-        echo '
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="alert alert-danger d-flex align-items-center col-md-4 shadow-lg" role="alert">
-                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
-                    if ($error == 'password_strength') {
-                        echo 'Password should be at least 8 characters in length. 
-                        Should include at least one upper case letter, one number,  
-                        and one special character.';
-                    } elseif ($error == 'passwords_do_not_match') {
-                        echo ' Oops! Password did not match! Try again.';
-                    } elseif ($error == 'email_already_taken') {
-                        echo ' Sorry, an email address is already in use. Please use another email address.';
-                    } elseif ($error == 'invalid_firstname_or_lastname') {
-                        echo ' Use only uppercase and lowercase letters in the first name and last name.';
-                    }
-        echo '  </div>
-            </div>
-        </div>';
-    } else {
-        $error='';
-    }
-?>
-
-<?php
-require_once 'includes/footer.php';
-?>
-

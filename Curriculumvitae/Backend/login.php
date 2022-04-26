@@ -1,12 +1,10 @@
-<?php
-require_once 'includes/header.php';
-?>
+
 <div class="container mt-5">
   <div class="d-flex justify-content-center">
     <div class="card shadow-lg bg-body rounded" style="width: 18rem;">
       <img src="/Curriculumvitae/Backend/Login.png" class="card-img-top" alt="...">
       <div class="card-body">
-        <form action="/Curriculumvitae/Backend/includes/login-inc.php" method="POST">
+        <form action="includes/dbManagement.php" method="POST">
           <div class="mb-3">
             <label for="inputEmail" class="form-label">Email</label>
             <input type="email" name="inputEmail" class="form-control" id="inputEmail" placeholder="Enter email address" required>
@@ -33,7 +31,3 @@ require_once 'includes/header.php';
     </div>
   </div>
 </div>
-
-<?php
-require_once 'includes/footer.php';
-?>

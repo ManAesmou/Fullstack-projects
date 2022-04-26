@@ -1,17 +1,7 @@
-<?php
-/**
- *  file:   change-password.php
- *  desc:   Create new user password with 
- */
-require 'includes/database.php';
-
-$sql = '';
-
-?>
 
 <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
     <h1 class="my-3">Change password</h1>
-    <form action="includes/change-password-inc.php" method="post">
+    <form action="includes/dbManagement.php" method="post">
         <div class="row">
             <div class="form-floating col-md-3 my-1 gx-1">
                 <input type="password" class="form-control" name="currentPassword" id="floatingCurrentPassword" placeholder="Current password" required>
@@ -29,7 +19,3 @@ $sql = '';
         <button type="submit" class="btn btn-primary m-2 mt-3 w-25" name="submitChangePassword">Submit</button>
     </form>
 </div>
-
-<?php
-require_once 'includes/footer.php';
-?>

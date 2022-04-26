@@ -1,5 +1,4 @@
 <?php
-
 //Params to connect to a database
 $dbHost = "localhost";
 $dbUser = "testaaja1";
