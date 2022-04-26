@@ -1,7 +1,6 @@
-<!-- 
-  file:          presidenttiHaku.php
-  description:   Haetaan presidentti tietokannasta hakusanan perusteella
-                  Tämä sisältö on osa index.php -sivua, joten tässä on vain tarvittava html-osuus 
+<!--
+  Luodaan hakukenttä rajaamaan taulukon presidenttejä. 
+  Sivustoa hyödynnetään index.php tiedostossa.
 -->
 <div class="container">
 <h3 class="my-3">Hae presidenttejä.</h3>

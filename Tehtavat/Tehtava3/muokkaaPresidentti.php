@@ -1,10 +1,8 @@
 <?php
-/**
- *  file:   muokkaaPresidentti.php
- *  desc:   Hakee valitun presidentin tiedot lomakkeelle muokattavaksi ja päivittää ne presidenttiID:n perusteela.
- */
-require 'includes/dbManagement.php';
-
+/*
+    Luodaan muutoslomake, jolla voidaan muokata presidentin tietoja ja päivitetään ne tietokantaan.
+    Sivustoa hyödynnetään index.php tiedostossa.
+*/ 
 if ($row > 0) {
     echo '
 <div class="container">

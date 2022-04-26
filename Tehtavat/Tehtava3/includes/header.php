@@ -1,3 +1,6 @@
+<?php
+  require 'dbManagement.php'
+?>
 <!-- Sivustojen ylätunniste ja navigaatio muille sivustoille -->
 <!doctype html>
 <html lang="en">

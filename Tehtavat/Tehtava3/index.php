@@ -62,7 +62,27 @@ else if ($page == 'data') include('omatTiedot.php');
 else if ($page == 'add_president') include('lisaaPresidentti.php');
 else if ($page == 'change') include('muokkaaPresidentti.php');
 else if ($page == 'delete') include('poistaPresidentti.php');
-else $page == '';
+else {
+  echo '
+  <div class="container">
+      <div class="row d-flex justify-content-center mt-5">
+        <div class="alert alert-success col-11" role="alert">
+          <h4 class="alert-heading">Tervetuloa!</h4>
+            <p>Tältä sivustolta löydät Yhdysvaltojen presidentit 1700 luvun alkupuolelta alkaen.<br> 
+            Voit lisätä, muokata ja poistaa presidenttejä haluamallasi tavalla. </p>
+          <hr>
+            <p class="mb-2">Sivusto on luotu palvelemaan tehtävän 3 tavoitteita: <br></p><p class="mx-3">
+            "Käytä oheista presidentit-tietokantaskriptiä ja luo tietokanta sekä määritä käyttöoikeudet webbisovellusta varten. <br>
+            1. Tee listaus USA presidenteistä aakkosjärjestyksessä (Etunimi, sukunimi ja syntymäaika). <br>
+            2. Tee hakutoiminto (vrt Autosovellus), jolla voi hakea presidenttejä nimen tms perusteella. <br>
+            3. Presidentin nimeä klikkaamalla näytetään ko presidentin kaikki tiedot (oma sivu). <br>
+            4. Tee presidentin lisäyslomake + php-talletuskoodi. <br>
+            5. Tee presidentin muokkauslomake + php-talletuskoodi. <br>
+            6. Tee mahdollisuus poistaa tietoja (tietue kerrallaan).". </p>
+        </div>
+      </div>
+  </div>';
+}
 
 //Lisätään alatunniste sivulle.
 require_once 'includes/footer.php';

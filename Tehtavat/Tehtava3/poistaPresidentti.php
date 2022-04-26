@@ -1,15 +1,10 @@
-<?php
-/**
- *  file:   poistaUser.php
- *  desc:   Poistaa urlin mukana tulevan userID:n perusteella käyttäjän tietokannasta
- */
-require 'includes/dbManagement.php';
-?>
-
+<!--
+    Varmistetaan omatTiedot.php kortin tietojen perusteella, haluatko varmasti poistaa valitun presidentin tietokannasta. 
+    Sivustoa hyödynnetään index.php tiedostossa.   
+-->
 <div class="container">
     <div class="row">
         <h3 class="mt-3">Haluatko varmasti poistaa presidentin?</h3>
-        <!--Tietokortti-->
         <div class="col-md-10">
             <form action="includes/dbManagement.php" method="post">
             <input type="hidden" name="presidenttiId" value="<?php echo $row['presidentID']; ?>">

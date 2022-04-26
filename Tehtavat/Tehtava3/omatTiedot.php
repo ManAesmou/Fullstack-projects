@@ -1,15 +1,10 @@
-<?php
-/* 
-    file:          omatTiedot.php
-    description:   Näyttää presidentin tietoja. 
-*/
-require 'includes/dbManagement.php';
-?>
-
+<!-- 
+    Tulostetaan yksittäisen presidentin tiedot kortille. 
+    Sivustoa hyödynnetään index.php tiedostossa.
+-->
 <div class="container">
     <div class="row">
         <h3 class="mt-3">Presidentin tiedot</h3>
-        <!--Tietokortti-->
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Nimi: <?php echo $row['first_name'].' '.$row['last_name'].' '.$row['suffix'] ?></div>
@@ -27,7 +22,7 @@ require 'includes/dbManagement.php';
                                     <a class="btn btn-danger mx-2" href="index.php?page=delete&last_name='.$row['last_name'].'&presidentID='.$row['presidentID'].'">Poista</a>';
                         }
                     ?>
-                    <a href="./index.php?page=all_presidents" class="btn btn-info">Takaisin</a>
+                    <a href="./index.php?page=search_president" class="btn btn-info">Takaisin</a>
                 </div>
             </div>
         </div>

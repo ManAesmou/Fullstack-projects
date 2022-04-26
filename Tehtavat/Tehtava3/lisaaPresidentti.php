@@ -1,12 +1,7 @@
-<?php
-  /*
-  file:   lisaaPresidentti.php
-  desc:   Tallentaa uuden rivin tauluun presidentti.
-  Tämä sisältö on osa index.php -sivua, joten tässä on vain tarvittava html-osuus
- */
-require 'includes/dbManagement.php'
-?>
-
+<!-- 
+    Luodaan lomake, jolla voidaan lisätä presidentti tietokantaan. 
+    Sivustoa hyödynnetään index.php tiedostossa.
+-->
 <div class="container">
     <h3 class="my-3">Lisää presidentti</h3>
     <h5>Pakolliset kentät merkitty *</h5>
@@ -47,4 +42,5 @@ require 'includes/dbManagement.php'
         </div>
         <button type="submit" class="btn btn-success m-2" name="laheta">Tallenna</button>
         <a href="./index.php?page=all_presidents" class="btn btn-info">Takaisin</a>
+    </form>
 </div>
