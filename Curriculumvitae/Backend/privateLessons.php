@@ -3,10 +3,9 @@
  *  file:   home-page.php
  *  desc:   Haetaan asiakkaita tietokannasta
  */
-require 'includes/database.php';
 ?>
 
-<h3 class="m-3">There are <?php echo $rowCount; ?> private lessons for you.</h3>
+<h3 class="m-3">There are <?php echo $rowCount; ?> private reservation for you.</h3>
 <div class="container">
   <div class="row d-flex justify-content-center col-md-12">
     <table class="table table-striped">

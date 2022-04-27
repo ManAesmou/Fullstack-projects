@@ -42,10 +42,10 @@ require 'dbManagement.php';
       <i class="fa-solid fa-user-large"></i>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/personalInfo.php">Manage profile settings</a></li>';
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=ownsettings">Personal settings</a></li>';
           if(isset($_SESSION['userID']) && $_SESSION['userID'] == '1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=register">Register user</a></li>';
         else echo ''; echo '
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=changepassword">Change password</a></li>
+        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=changepass">Change password</a></li>
         <li><a class="dropdown-item" href="/Curriculumvitae/Backend/includes/dbManagement.php?submit=logout">Log out</a></li>
       </ul>
     </div>';
@@ -59,7 +59,7 @@ require 'dbManagement.php';
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=home">Home page</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=privates">Private lessons</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/index.html">Home</a>';
             ?>
           </li>

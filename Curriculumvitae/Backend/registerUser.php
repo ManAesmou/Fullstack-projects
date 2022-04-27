@@ -34,8 +34,8 @@
             <div class="col-md-3 my-2">
             <label for="permissions" class="form-label">Access rights</label>
             <select class="form-select" id="permissions" aria-label="Default select example" name="permissions">
-                <option value="user">Regular User</option>
-                <option value="admin">Administrator</option>
+                <option value="User account">Regular User</option>
+                <option value="Admin">Administrator</option>
             </select>
             </div>
             <div class="col-md-3 my-2">

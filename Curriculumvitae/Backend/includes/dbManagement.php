@@ -14,7 +14,7 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = '';
 !empty($_SESSION['lastname']) ? $sessionLastname = $_SESSION['lastname'] : $sessionLastname = '';
 !empty($_SESSION['priviledge']) ? $sessionpriviledge = $_SESSION['priviledge'] : $sessionpriviledge = '';
 
-if ($page == 'home') {
+if ($page == 'privates') {
 
     $sql = "SELECT * 
             FROM yksityistunnit
@@ -25,12 +25,90 @@ if ($page == 'home') {
     $rowCount = mysqli_num_rows($result);
 }
 
+//Haetaan kaikki presidentti-taulun sarakkeet tietokannasta, ja tallennetaan tulosrivit $row-muuttujaan.
+if ($page == 'ownsettings' && isset($_SESSION['userID'])) {
+
+    $sql = "SELECT * 
+            FROM kayttajatunnukset 
+            WHERE etunimi = '$sessionFirstname'
+            OR sukunimi = '$sessionLastname'";
+  
+    $result = $conn->query($sql);
+  
+    if($result->num_rows > 0)
+      $row = $result->fetch_assoc();
+}
+
 if (isset($_POST['submitChangePassword'])) {
-    if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $password)) {
-        echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
-       } else {
-        echo "Your password is strong.";
-       }
+    if (isset($_SESSION['userID'])) {
+        function test_input($data){
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+        $currentPass = $_POST['currentPassword'];
+        $newPass = $_POST['newPassword'];
+        $confirmNewPass = $_POST['confirmNewPassword'];
+        $userId = $_SESSION['userID'];
+
+        test_input($currentPass);
+        test_input($newPass);
+        test_input($confirmNewPass);
+
+        if (empty($currentPass) || empty($newPass) || empty($confirmNewPass)) {
+            header("Location: ../index.php?page=changepass&error=emptyfields");
+            exit();
+        } else {
+            $sql = "SELECT * FROM kayttajatunnukset WHERE kayttajatunnusID = ?";
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("Location: ../index.php?page=changepass&error=sql_select-statement");
+                exit();
+            } else {
+                mysqli_stmt_bind_param($stmt, "s", $userId);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                $row = mysqli_fetch_assoc($result);
+
+                $passCheck = password_verify($currentPass, $row['salasana']);
+                $newPassCheck = password_verify($newPass, $row['salasana']);
+
+                if ($passCheck == false) {
+                    header("Location: ../index.php?page=changepass&error=wrong_current_password");
+                    exit();
+                } else if ($newPassCheck) {
+                    header('Location: ../index.php?page=changepass&error=same_password');
+                    exit();
+                } else if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $newPass)) {
+                    header("Location: ../index.php?page=changepass&error=password_strength");
+                    exit();
+                } else if ($newPass !== $confirmNewPass) {
+                    header("Location: ../index.php?page=changepass&error=new_passwords_do_not_match");
+                    exit();
+                } else {
+                    $sql = "UPDATE kayttajatunnukset SET salasana = ? WHERE kayttajatunnusID = '$userId'";
+                    $stmt = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmt, $sql)) {
+                        header("Location: ../index.php?page=changepass&error=sql_insert-statement");
+                        exit();
+                    } else {
+                        $hashedPass = password_hash($newPass, PASSWORD_DEFAULT);
+                        mysqli_stmt_bind_param($stmt, "s", $hashedPass);
+                        mysqli_stmt_execute($stmt);
+                        header("Location: ../index.php?success=password_changed");
+                        exit();
+                    }
+                }
+            }
+        }
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+    } else {
+        header('location: index.php?no_permissions');
+    }
 }
 
 if (isset($_POST['submitLogin'])) {
@@ -45,7 +123,7 @@ if (isset($_POST['submitLogin'])) {
         $sql = "SELECT * FROM kayttajatunnukset WHERE email = ?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../index.php?error=sqlerror&select-statement");
+            header("Location: ../index.php?error=sql_select-statement");
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "s", $email);
@@ -75,10 +153,8 @@ if (isset($_POST['submitLogin'])) {
     }
 }
 
-
-
 if (isset($_POST['submitRegister'])) {
-    if (isset($_SESSION['userID']) && $_SESSION['priviledge'] === 'admin') {
+    if (isset($_SESSION['userID']) && $_SESSION['priviledge'] === 'Admin') {
 
         function test_input($data){
             $data = trim($data);
@@ -106,15 +182,7 @@ if (isset($_POST['submitRegister'])) {
         test_input($permissions);
         test_input($registerDate);
 
-        // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-        $specialChars = preg_match('@[^\w]@', $password);
 
-        if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-            header("Location: ../index.php?page=register&error=password_strength");
-        }
 
         if (empty($email) || empty($password) || empty($confirmPass) || empty($firstname) || empty($lastname) || empty($phone) || empty($permissions) || empty($registerDate)) {
             header("Location: ../index.php?page=register&error=emptyfields");
@@ -125,11 +193,14 @@ if (isset($_POST['submitRegister'])) {
         } elseif ($password !== $confirmPass) {
             header("Location: ../index.php?page=register&error=passwords_do_not_match");
             exit();
+        } else if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $password)) {
+            header("Location: ../index.php?page=register&error=password_strength");
+            exit();
         } else {
             $sql = "SELECT email FROM kayttajatunnukset WHERE email = ?";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                header("Location: ../index.php?page=register&error=sqlerror&select-statement");
+                header("Location: ../index.php?page=register&error=sql_select-statement");
                 exit();
             } else {
                 mysqli_stmt_bind_param($stmt, "s", $email);
@@ -144,14 +215,14 @@ if (isset($_POST['submitRegister'])) {
                     $sql = "INSERT INTO kayttajatunnukset (etunimi, sukunimi, email, salasana, puhelin, kayttooikeudet, rekisterointipvm) VALUES (?, ?, ?, ?, ?, ?, ?)";
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                        header("Location: ../index.php?page=register&error=sqlerror&insert-statement");
+                        header("Location: ../index.php?page=register&error=sql_insert-statement");
                         exit();
                     } else {
                         $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
                         mysqli_stmt_bind_param($stmt, "sssssss", $firstname, $lastname, $email, $hashedPass, $phone, $permissions, $registerDate);
                         mysqli_stmt_execute($stmt);
-                        header("Location: ../index.php?succes=account_registered");
+                        header("Location: ../index.php?success=account_registered");
                         exit();
                     }
                 }
