@@ -52,7 +52,7 @@
   <div class="container-register">
     <div class="title">Book a lesson</div> <br>
     <h5>* Marked are required </h5>
-    <form action="bookLesson.php" method="POST">
+    <form action="./Backend//includes//dbManagement.php" method="POST">
       <div class="user-details">
         <div class="input-box">
           <label for="fullname" class="details">Full Name*</label>
@@ -65,10 +65,6 @@
         <div class="input-box">
           <label for="phone" class="details">Phone</label>
           <input type="text" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone (0501234567)">
-        </div>
-        <div class="input-box">
-          <label for="instructor" class="details">Instructor*</label>
-          <input type="text" name="instructor" id="instructor" placeholder="Enter your instructor" required>
         </div>
       </div>
       <div class="gender-details">
@@ -84,19 +80,26 @@
           <div class="category">
             <label class="gender-title" for="lessontopic">Lesson topic*</label><br>
               <select class="form-select col-3" id="lessontopic" name="lessontopic">
-                <option value="jiu-jitsu basics">Jiu-jitsu basics</option>
-                <option value="wrestling basics">Wrestling basics</option>
+                <option value="Jiu-jitsu basics">Jiu-jitsu basics</option>
+                <option value="Wrestling basics">Wrestling basics</option>
               </select><br>
           </div>
           <div class="category">
-            <label class="gender-title" for="belt">Belt color</label><br>
+            <label class="gender-title" for="instructor">Instructor*</label><br>
+              <select class="form-select col-3" id="instructor" name="instructor" required>
+                <option value="Ismo">Ismo Manninen</option>
+                <option value="Milla">Milla Loimuvirta</option>
+              </select><br>
+          </div>
+          <div class="category">
+            <label class="gender-title" for="belt">Your experience</label><br>
               <select class="form-select col-3" id="belt" name="belt">
-                <option value="beginner">Beginner</option>
-                <option value="white">White</option>
-                <option value="blue">Blue</option>
-                <option value="purpple">Purpple</option>
-                <option value="brown">Brown</option>
-                <option value="black">Black</option>
+                <option value="Beginner">Beginner</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Purpple">Purpple</option>
+                <option value="Brown">Brown</option>
+                <option value="Black">Black</option>
               </select><br>
           </div>
           <div class="category">
@@ -108,7 +111,7 @@
           </div>
       </div>
       <div class="button">
-        <button type="submit" value="register">Accept the registration</button>
+        <button type="submit" name="bookLesson">Accept the registration</button>
       </div>
     </form>  
   </div>

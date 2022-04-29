@@ -59,22 +59,20 @@ require 'dbManagement.php';
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=privates">Private lessons</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=reservation">Private reservation</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/index.html">Home</a>';
             ?>
           </li>
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.php">Memory game</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=lessonBooking">Lesson booking</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/competition.html">Competition</a>';
             ?>
           </li>
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.php">Memory game</a>';
               else echo '<a class="nav-link" href="/Curriculumvitae/travel.html">Travel</a>';
             ?>
           </li>
-          <?php 
-            ?>
           <li class="nav-item">
           <?php if(isset($_SESSION['userID'])) echo '';
               else echo '<a class="nav-link" href="/Curriculumvitae/bookLesson.html">Lesson</a>';

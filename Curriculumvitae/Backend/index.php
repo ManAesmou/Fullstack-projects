@@ -70,14 +70,16 @@ if (isset($_GET['error'])) {
 
 if (isset($_SESSION['userID']) && isset($_SESSION['firstname']) && isset($_SESSION['lastname']) && isset($_SESSION['priviledge'])) {
     
-    if ($page == 'privates') {
-        include('privateLessons.php');
+    if ($page == 'reservation') {
+        include('privateReservation.php');
     } elseif ($page == 'changepass') {
         include('change-password.php');
     } elseif ($page == 'ownsettings') {
         include('personalSettings.php');
     } elseif ($page == 'register') {
         include('registerUser.php');
+    } elseif ($page == 'lessonBooking') {
+        include('lessonBooking.html');
     }
 } 
 

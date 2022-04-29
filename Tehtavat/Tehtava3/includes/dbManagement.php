@@ -8,6 +8,8 @@ isset($_GET['first_name']) ? $firstName = $_GET['first_name'] : $firstName='';
 isset($_GET['last_name']) ? $lastName = $_GET['last_name'] : $lastName='';
 isset($_GET['presidentID']) ? $presidentId = $_GET['presidentID'] : $presidentId='';
 
+
+
 //Haetaan presidentti-taulusta etunimi, sukunimi ja syntymäpäivämäärä.
 if ($page == 'all_presidents') {
   $sql = 'SELECT first_name, last_name, birth FROM presidentti ORDER BY first_name, last_name';
@@ -15,6 +17,8 @@ if ($page == 'all_presidents') {
 //Suoritetaan kysely tietokannasta ja haetaan rivien määrä tietokannasta.
   $result = $conn->query($sql);
   $rowCount = mysqli_num_rows($result);
+
+
 
 //Haetaan presidentti-taulusta etunimi, sukunimi ja syntymäpäivämäärä hakusanan perusteella. 
 } else if ($page == 'search_president') {    
@@ -30,6 +34,8 @@ if ($page == 'all_presidents') {
   $result = $conn->query($sql);
   $rowCount = mysqli_num_rows($result);
 
+
+
 //Haetaan kaikki presidentti-taulun sarakkeet tietokannasta, ja tallennetaan tulosrivit $row-muuttujaan.
 } else if ($page == 'data' || $page == 'change' || $page == 'delete') {
 
@@ -42,6 +48,8 @@ if ($page == 'all_presidents') {
 
   if($result->num_rows > 0)
     $row = $result->fetch_assoc();
+
+
 
 //Välitetään lomakkeen arvot skriptille POST-menetelmän avulla, ja poistetaan merkkijonoista erikoismerkit, että SQL-lauseke voidaan suorittaa.
 } else if (isset($_POST['laheta'])) {
@@ -80,6 +88,8 @@ if ($page == 'all_presidents') {
       }
   }
   
+
+
 //Välitetään lomakkeen arvot skriptille POST-menetelmän avulla, ja poistetaan merkkijonoista erikoismerkit, että SQL-lauseke voidaan suorittaa.
 } else if(isset($_POST['lahetaMuokkaus'])) {
   $presidentId = $conn->real_escape_string($_POST['presidenttiId']);
@@ -110,6 +120,8 @@ if ($page == 'all_presidents') {
   }else {
       header('location: ../index.php?page=data?error=sql_update-statement');
   }
+
+
 
 //Poistetaan erikoismerkit presidenttiId-muuttujasta. Muuttujalla poistetaan presidentti-taulusta presidentti.
 } else if (isset($_POST['poistaPresidentti'])) {

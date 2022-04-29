@@ -3,7 +3,10 @@
  *  file:   lainausJSON.php
  *  desc:   Palauttaa satunnaisen lainaustekstin tietokannasta JSON-muodosta. 
  *          Aluksi määritellään header, joka mahdollistaa palvelun käytön mistä tahansa verkko-osoitteesta
+ * 
  */
+
+//Aluksi määritellään header, joka mahdollistaa palvelun käytön mistä tahansa verkko-osoitteesta
 header('Access-Control-Allow-Origin: *');
 include('dbConnect.php'); //tietokantayhteys käyttöön
 $sql='SELECT * FROM lainaus ORDER BY rand() Limit 1';
