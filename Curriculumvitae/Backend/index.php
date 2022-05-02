@@ -80,6 +80,8 @@ if (isset($_SESSION['userID']) && isset($_SESSION['firstname']) && isset($_SESSI
         include('registerUser.php');
     } elseif ($page == 'lessonBooking') {
         include('lessonBooking.html');
+    } elseif ($page == 'addBooking') {
+        include('addBooking.html');
     }
 } 
 

@@ -1,0 +1,28 @@
+
+<!-- //TODO KESKEN-->
+  <div class="container mt-5 shadow-lg p-3 bg-body rounded">
+    <h1 class="mb-4">Enter the reservation in <br> the lesson booking.</h1>
+    <div id="userData"></div>
+    <div class="container">
+      <form id="frmAddBooking">
+          <div class="row">
+              <div class="form-floating col-md-5 m-2 gx-1">
+                <textarea class="form-control" placeholder="Enter a description" name="description" id="floatingdescription" style="height: 100px" required></textarea>
+                <label for="floatingdescription">Enter a description</label>
+              </div>
+          </div>
+          <div class="row">
+            <div class="form-floating col-md-5 m-2 gx-1">
+              <div class="form-group">
+                <label for="dateTime">Enter the date for the private lesson</label>
+                <input type="datetime-local" class="form-control" name="dateTime" id="dateTime" required> 
+              </div>
+            </div>
+          </div>
+          <div class="m-2">
+            <button type="submitLesson" class="btn btn-primary col-2" id="saveLesson">Save</button>
+            <button type="button" class="btn btn-secondary col-2 mx-4" id="returnReservation">Return</button>
+          </div>
+      </form>
+    </div>
+  </div>

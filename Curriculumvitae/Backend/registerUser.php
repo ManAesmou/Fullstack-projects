@@ -1,6 +1,6 @@
 
 <div class="container mt-5 shadow-lg p-3 mb-5 bg-body rounded">
-    <h1 class="my-3">Register an account</h1>
+    <h1 class="mb-3">Register an account</h1>
     <form action="includes/dbManagement.php" method="post">
         <div class="row">
             <div class="form-floating col-md-4 my-1 gx-1">

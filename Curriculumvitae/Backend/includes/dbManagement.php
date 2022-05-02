@@ -143,6 +143,7 @@ if (isset($_POST['submitLogin'])) {
 
 if (isset($_SESSION['userID'] )&& isset($_SESSION['firstname']) && isset($_SESSION['lastname'])) {
 
+        //Tulostetaan JSON.php sivulle dataa.
         $sql = "SELECT * 
                 FROM yksityistunnit
                 INNER JOIN varaukset ON yksityistunnit.varausID = varaukset.varausID
@@ -150,17 +151,22 @@ if (isset($_SESSION['userID'] )&& isset($_SESSION['firstname']) && isset($_SESSI
                 ORDER BY ohjauksenpvm";
         $bookingResult = mysqli_query($conn, $sql);
         $rows = [];
+        
+        if ($page == "reservation") {
+            $sql = "SELECT * 
+                    FROM varaukset
+                    INNER JOIN sukupuolet ON varaukset.sukupuoliID = sukupuolet.sukupuoliID
+                    WHERE ohjaaja = '$sessionFirstname'";
 
-    if ($page == 'reservation') {
+            $result = $conn->query($sql);
+            $rowCount = mysqli_num_rows($result);
+        }
 
-        $sql = "SELECT * 
-                FROM varaukset
-                INNER JOIN sukupuolet ON varaukset.sukupuoliID = sukupuolet.sukupuoliID
-                WHERE ohjaaja = '$sessionFirstname'";
+            // $desc = $_POST['resultDescription'];
+            // $date = $_POST['resultDateTime'];
 
-        $result = $conn->query($sql);
-        $rowCount = mysqli_num_rows($result);
-    }
+            // $sql = "INSERT INTO yksityistunnit(kuvaus, ohjauksenpvm, varausID) VALUES ('$desc', '$date', ) ";
+
 
     //Haetaan kaikki presidentti-taulun sarakkeet tietokannasta, ja tallennetaan tulosrivit $row-muuttujaan.
     if ($page == 'ownsettings' && isset($_SESSION['userID'])) {

@@ -1,6 +1,8 @@
 //  file:   js/oma.js
 //  desc:   Käyttöliittymän ja PHP-backendin yhdistävä koodi. Sovellus tallentaa kirjautumistiedot session-tietoina
 //          palvelimelle ja käyttäjän tietoja selaimen localStorage-muuttujille
+
+
 let userid=0; //aluksi userid on nolla -> globaali, eli voidaan käyttää kaikissa functioissa jne
 let user='';  //Tämän avulla käyttäjän nimi tulostetaan
 let polku='http://localhost/TA42T21K/yritysxHTMLapp/php/'; //HTTP-osoite backend-kansioon
@@ -19,8 +21,9 @@ $(document).ready(function(){
         kirjauduUlos();
     })
 })
+
+//hävitetään localStoragesta käyttäjän tiedot
 function kirjauduUlos(){
-    //hävitetään localStoragesta käyttäjän tiedot
     localStorage.removeItem("userid");
     localStorage.removeItem("kayttaja");
     $("#user").html('<p class="alert alert-info">Olet kirjautunut ulos!</p>');
@@ -28,8 +31,9 @@ function kirjauduUlos(){
         alkutila();
     },2000);
 }
+
+//lähettää lomakkeen id-kentät email ja pwd login.php:lle
 function kirjaudu(){
-    //lähettää lomakkeen id-kentät email ja pwd login.php:lle
     let email=$("#email").val();
     let salasana=$("#pwd").val();
     $.post(polku+'login.php',{
@@ -66,10 +70,10 @@ function kirjaudu(){
     })
 }
 
+//jos käyttäjä on kirjautunut (tarkistetaan session.php -scriptin avulla backendista),
+//valikot yms kirjautuneelle, muuten alkutilanäkymä
 function onkoKirjautunut(){
-    //jos käyttäjä on kirjautunut (tarkistetaan session.php -scriptin avulla backendista),
-    //valikot yms kirjautuneelle, muuten alkutilanäkymä
-    userid=localStorage.getItem('userid'); //otetaan mahdollisesti talletettu userid
+    userid = localStorage.getItem('userid'); //otetaan mahdollisesti talletettu userid
     $.get(polku+'session.php?userid='+userid,function(data){
         let tulos=JSON.parse(data,function(key, value){
             return value;
@@ -87,8 +91,8 @@ function onkoKirjautunut(){
     
 }
 
+//määrittää sovelluksen tilan ennen kirjautumista/uloskirjautumisen jälkeen
 function alkutila(){
-    //määrittää sovelluksen tilan ennen kirjautumista/uloskirjautumisen jälkeen
     let teksti='<p class="alert alert-info">Sovelluksen käyttäminen vaatii kirjautumisen</p>';
     $("#users").hide();
     $("#logout").hide();

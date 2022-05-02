@@ -6,4 +6,5 @@
     <hr>
   </div>
 </footer>
+<script src="js/lessonBooking.js" defer></script>
 </html>

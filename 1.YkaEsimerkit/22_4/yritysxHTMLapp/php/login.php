@@ -10,8 +10,8 @@ if(empty($_POST)) echo '{"Status":"Virhe", "Viesti":"Virheellinen sivunpyyntö!"
 else{
     include('dbConnect.php'); //tietokantayhteys käyttöön
     //luetaan lomakkeen kentät
-    $email=$conn->real_escape_string($_POST['email']);  //poistaa ei sallitut merkit
-    $salasana=$conn->real_escape_string($_POST['pwd']); 
+    $email = $conn->real_escape_string($_POST['email']);  //poistaa ei sallitut merkit
+    $salasana = $conn->real_escape_string($_POST['pwd']); 
     //sql-lause
     $sql="SELECT Password, userID, Etunimi, Sukunimi, userRole FROM users WHERE Email='$email'";
     //suoritetaan sql-lause
@@ -23,8 +23,8 @@ else{
         //verrataan salasanoja kryptattuina keskenään
         if(password_verify($salasana,$rivi['Password'])){
             //salasana oli oikein - > palautetaan JSON-muodossa user ja userid
-            $user=$rivi['Etunimi'].' '.$rivi['Sukunimi'];
-            $userid=$rivi['userID'];
+            $user = $rivi['Etunimi'].' '.$rivi['Sukunimi'];
+            $userid = $rivi['userID'];
             echo '{"Status":"OK", "Kayttaja":"'.$user.'", "UserID":"'.$userid.'"}';
         }else{
             //salasana väärin
