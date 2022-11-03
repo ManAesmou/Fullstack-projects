@@ -1,0 +1,125 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player"
+5    android:versionCode="1"
+6    android:versionName="0.1" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="22"
+9-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="30" />
+10-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
+11
+12    <uses-feature android:glEsVersion="0x00030000" />
+12-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:3-52
+12-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:17-49
+13    <uses-feature
+13-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:3-91
+14        android:name="android.hardware.vulkan.version"
+14-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:17-63
+15        android:required="false" />
+15-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:64-88
+16
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:3-65
+17-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:20-62
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:3-77
+18-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:20-74
+19
+20    <uses-feature
+20-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:3-88
+21        android:name="android.hardware.touchscreen"
+21-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:17-60
+22        android:required="false" />
+22-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:61-85
+23    <uses-feature
+23-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:3-99
+24        android:name="android.hardware.touchscreen.multitouch"
+24-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:17-71
+25        android:required="false" />
+25-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:72-96
+26    <uses-feature
+26-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:3-108
+27        android:name="android.hardware.touchscreen.multitouch.distinct"
+27-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:17-80
+28        android:required="false" />
+28-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:81-105
+29
+30    <application android:extractNativeLibs="true" >
+30-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-16:17
+30-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:16-48
+31        <activity
+31-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:5-11:16
+32            android:name="com.unity3d.player.UnityPlayerActivity"
+32-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:15-68
+33            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+33-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:184-365
+34            android:hardwareAccelerated="false"
+34-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:401-436
+35            android:launchMode="singleTask"
+35-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:152-183
+36            android:resizeableActivity="false"
+36-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:366-400
+37            android:screenOrientation="userPortrait"
+37-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:111-151
+38            android:theme="@style/UnityThemeSelector" >
+38-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:69-110
+39            <intent-filter>
+39-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:7-8:23
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:9-61
+40-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:17-58
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:9-69
+42-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:19-66
+43            </intent-filter>
+44
+45            <meta-data
+45-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:7-82
+46                android:name="unityplayer.UnityActivity"
+46-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:18-58
+47                android:value="true" />
+47-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:59-79
+48
+49            <layout
+49-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:7-127
+50                android:defaultHeight="800px"
+50-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:15-44
+51                android:defaultWidth="480px"
+51-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:45-73
+52                android:minHeight="300px"
+52-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:74-99
+53                android:minWidth="400px" />
+53-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:100-124
+54        </activity>
+55
+56        <meta-data
+56-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-69
+57            android:name="unity.splash-mode"
+57-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-48
+58            android:value="0" />
+58-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:49-66
+59        <meta-data
+59-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-74
+60            android:name="unity.splash-enable"
+60-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-50
+61            android:value="True" />
+61-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:51-71
+62        <meta-data
+62-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-79
+63            android:name="unity.launch-fullscreen"
+63-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-54
+64            android:value="False" />
+64-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:55-76
+65        <meta-data
+65-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-84
+66            android:name="unity.allow-resizable-window"
+66-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:16-59
+67            android:value="False" />
+67-->C:\Ismo\Projects\ZigZagPeli\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:60-81
+68    </application>
+69
+70</manifest>
