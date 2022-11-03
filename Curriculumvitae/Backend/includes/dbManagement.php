@@ -158,7 +158,7 @@ if (isset($_SESSION['userID'] )&& isset($_SESSION['firstname']) && isset($_SESSI
                     INNER JOIN sukupuolet ON varaukset.sukupuoliID = sukupuolet.sukupuoliID
                     WHERE ohjaaja = '$sessionFirstname'";
 
-            $result = $conn->query($sql);
+            $result = $conn->query($sql); // muuuta => $bookingResult = mysqli_query($conn, $sql);
             $rowCount = mysqli_num_rows($result);
         }
 

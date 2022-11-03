@@ -42,15 +42,15 @@ require 'dbManagement.php';
       <i class="fa-solid fa-user-large"></i>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=ownsettings">Personal settings</a></li>';
-          if(isset($_SESSION['userID']) && $_SESSION['userID'] == '1') echo '<li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=register">Register user</a></li>';
+        <li><a class="dropdown-item" href="/htdocs/Curriculumvitae/Backend/index.php?page=ownsettings">Personal settings</a></li>';
+          if(isset($_SESSION['userID']) && $_SESSION['userID'] == '1') echo '<li><a class="dropdown-item" href="/htdocs/Curriculumvitae/Backend/index.php?page=register">Register user</a></li>';
         else echo ''; echo '
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/index.php?page=changepass">Change password</a></li>
-        <li><a class="dropdown-item" href="/Curriculumvitae/Backend/includes/dbManagement.php?submit=logout">Log out</a></li>
+        <li><a class="dropdown-item" href="/htdocs/Curriculumvitae/Backend/index.php?page=changepass">Change password</a></li>
+        <li><a class="dropdown-item" href="/htdocs/Curriculumvitae/Backend/includes/dbManagement.php?submit=logout">Log out</a></li>
       </ul>
     </div>';
     } else {
-      echo '<a class="navbar-brand" href="/Curriculumvitae/Backend/login.php"><img src="./logo.png"></a>';
+      echo '<a class="navbar-brand" href="/htdocs/Curriculumvitae/Backend/login.php"><img src="./logo.png"></a>';
     }
       ?>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -59,28 +59,28 @@ require 'dbManagement.php';
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=reservation">Private reservation</a>';
-              else echo '<a class="nav-link" href="/Curriculumvitae/index.html">Home</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/htdocs/Curriculumvitae/Backend/index.php?page=reservation">Private reservation</a>';
+              else echo '<a class="nav-link" href="/htdocs/Curriculumvitae/index.html">Home</a>';
             ?>
           </li>
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=lessonBooking">Lesson booking</a>';
-              else echo '<a class="nav-link" href="/Curriculumvitae/competition.html">Competition</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/htdocs/Curriculumvitae/Backend/index.php?page=lessonBooking">Lesson booking</a>';
+              else echo '<a class="nav-link" href="/htdocs/Curriculumvitae/competition.html">Competition</a>';
             ?>
           </li>
           <li class="nav-item">
-          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/Curriculumvitae/Frontend/index.php">Memory game</a>';
-              else echo '<a class="nav-link" href="/Curriculumvitae/travel.html">Travel</a>';
+          <?php if(isset($_SESSION['userID'])) echo '<a class="nav-link" href="/htdocs/Curriculumvitae/Frontend/index.php">Memory game</a>';
+              else echo '<a class="nav-link" href="/htdocs/Curriculumvitae/travel.html">Travel</a>';
             ?>
           </li>
           <li class="nav-item">
           <?php if(isset($_SESSION['userID'])) echo '';
-              else echo '<a class="nav-link" href="/Curriculumvitae/bookLesson.html">Lesson</a>';
+              else echo '<a class="nav-link" href="/htdocs/Curriculumvitae/bookLesson.html">Lesson</a>';
             ?>
           </li>
           <li class="nav-item">
             <?php if(isset($_SESSION['userID'])) echo '';
-              else echo '<a class="nav-link" href="/Curriculumvitae/Backend/index.php?page=login">Login</a>';
+              else echo '<a class="nav-link" href="/htdocs/Curriculumvitae/Backend/index.php?page=login">Login</a>';
             ?>
           </li>
         </ul>

@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-center">
     <div class="card shadow-lg bg-body rounded" style="width: 18rem;">
-      <img src="/Curriculumvitae/Backend/Login.png" class="card-img-top" alt="...">
+      <img src="./Login.png" class="card-img-top" alt="...">
       <div class="card-body">
         <form action="includes/dbManagement.php" method="POST">
           <div class="mb-3">
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="form-text">We'll never share your email with anyone else. Don't have an account? <a href="/Curriculumvitae/Backend/signup.php">Sing up</a> </div>
+          <div class="form-text">We'll never share your email with anyone else. Don't have an account? <a href="./signup.php">Sing up</a> </div>
           </div>
           <button type="submit" class="btn btn-primary w-100" name="submitLogin">Login</button>
         </form>
