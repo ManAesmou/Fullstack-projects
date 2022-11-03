@@ -1,18 +1,13 @@
 ---
-
-<div align="center">
-  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="600" height="300"/>
-</div>
-
 <h1 align="center">
-  Hey there!
+  Hello and welcome!
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
 </h1>
 
 ---
 
 ### :man_technologist: About Me :
-I am a supervisor and a student from Tampere.
+:man: I am a supervisor and a student from Tampere.
 
 :book: I am currently studying in my second year at Lapland University of Applied Sciences.
 
@@ -22,3 +17,6 @@ I am a supervisor and a student from Tampere.
     <img src="https://img.shields.io/badge/linkedin-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin Badge"/>
   </a>
 </div>
+
+<br>
+:zap: Feel free to check out my projects!
