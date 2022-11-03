@@ -11,12 +11,11 @@
 
 :book: I am currently studying in my second year at Lapland University of Applied Sciences.
 
+:zap: Feel free to check out my projects!
+
 <div id="badges">
   :mailbox: You can reach me on:
   <a href="https://www.linkedin.com/in/ismo-manninen-67405222b">
     <img src="https://img.shields.io/badge/linkedin-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin Badge"/>
   </a>
 </div>
-
-<br>
-:zap: Feel free to check out my projects!
