@@ -7,7 +7,7 @@
 ---
 
 ### :man_technologist: About Me :
-:man: I am a supervisor and a student from Tampere.
+:man: I am a student and a grappler who lives in Tampere.
 
 :book: I am currently studying in my second year at Lapland University of Applied Sciences.
 
